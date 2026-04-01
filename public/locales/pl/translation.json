@@ -387,8 +387,8 @@
       "errorPatient": "Nie udało się pobrać danych pacjenta.",
       "errorEntries": "Nie udało się pobrać wpisów dziennika.",
       "filter": {
-      "dateRange": "Zakres danych",
-      "clear": "Pokaż wszystko"
+        "dateRange": "Zakres danych",
+        "clear": "Pokaż wszystko"
       },
       "tabs": {
         "visualization": "Wizualizacja",
@@ -412,7 +412,9 @@
         "totalEntries": "Łączna liczba wpisów",
         "medicalFactors": "Czynniki medyczne"
       }
-    }
+    },
+    "search": "Szukaj pacjenta...",
+    "noResults": "Brak pacjentów pasujących do wyszukiwania."
   },
   "auth": {
     "login": "Zaloguj się",

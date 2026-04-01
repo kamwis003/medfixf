@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { Alert, AlertDescription } from '@/components/ui/alert'
+import { Input } from '@/components/ui/input'
 import { ROUTES } from '@/routes/paths'
 import { apiRequest } from '@/utils/api'
 
@@ -23,6 +24,7 @@ export const PatientsPage: React.FC = () => {
   const [patients, setPatients] = React.useState<IPatientProfile[]>([])
   const [isLoading, setIsLoading] = React.useState(true)
   const [error, setError] = React.useState<string | null>(null)
+  const [search, setSearch] = React.useState('')
 
   React.useEffect(() => {
     setIsLoading(true)
@@ -36,13 +38,28 @@ export const PatientsPage: React.FC = () => {
       .finally(() => setIsLoading(false))
   }, [])
 
+  const filteredPatients = React.useMemo(() => {
+    const q = search.trim().toLowerCase()
+    if (!q) return patients
+    return patients.filter(p =>
+      p.firstName.toLowerCase().includes(q) ||
+      p.lastName.toLowerCase().includes(q)
+    )
+  }, [patients, search])
+
   return (
     <div className="flex flex-col gap-6 p-4 md:p-6">
       <Card className="max-w-4xl mx-auto w-full">
         <CardHeader>
           <CardTitle>{t('patients.title')}</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="flex flex-col gap-4">
+          <Input
+            placeholder={t('patients.search')}
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            className="max-w-sm"
+          />
           {isLoading ? (
             <div className="text-center">{t('patients.loading')}</div>
           ) : error ? (
@@ -51,7 +68,7 @@ export const PatientsPage: React.FC = () => {
             </Alert>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {patients.map((p) => (
+              {filteredPatients.map((p) => (
                 <button
                   key={p.id}
                   type="button"
@@ -74,6 +91,11 @@ export const PatientsPage: React.FC = () => {
                   </Card>
                 </button>
               ))}
+              {filteredPatients.length === 0 && (
+                <p className="col-span-full text-center text-muted-foreground text-sm">
+                  {t('patients.noResults')}
+                </p>
+              )}
             </div>
           )}
         </CardContent>

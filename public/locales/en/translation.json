@@ -325,8 +325,8 @@
       "errorPatient": "Failed to load patient data.",
       "errorEntries": "Failed to load diary entries.",
       "filter": {
-      "dateRange": "Data range",
-      "clear": "Show all"
+        "dateRange": "Data range",
+        "clear": "Show all"
       },
       "tabs": {
         "visualization": "Visualization",
@@ -350,7 +350,9 @@
         "totalEntries": "Total entries",
         "medicalFactors": "Medical factors"
       }
-    }
+    },
+    "search": "Search patient...",
+    "noResults": "No patients match your search."
   },
   "auth": {
     "login": "Log in",
