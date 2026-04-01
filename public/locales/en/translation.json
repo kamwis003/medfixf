@@ -1,0 +1,589 @@
+{
+  "app": {
+    "name": "Virtual Fixmed"
+  },
+  "welcome": "Welcome to Virtual Fixmed!",
+  "poweredBy": "Powered by Vite, React, and i18next.",
+  "counterButton": "Count is {{count}}",
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark",
+    "auto": "System"
+  },
+  "notFound": {
+    "title": "404",
+    "description": "Looks like you've ventured into the unknown digital realm.",
+    "returnButton": "Return to website",
+    "message": "Page not found",
+    "goHome": "Go to homepage"
+  },
+  "pages": {
+    "home": "Home",
+    "notFound": "Page Not Found",
+    "dashboard": "Dashboard",
+    "billing": "Billing",
+    "forgotPassword": "Forgot password",
+    "register": "Register",
+    "login": "Login",
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "lastUpdated": "Last updated: January 11, 2026",
+      "sections": {
+        "introduction": {
+          "title": "1. Introduction",
+          "content": "Virtual Fixmed (\"we\", \"our\", or \"us\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our educational platform."
+        },
+        "dataCollection": {
+          "title": "2. Information We Collect",
+          "content": "We collect information that you provide directly to us when you:",
+          "items": [
+            "Create an account (email, name, password)",
+            "Use our platform and services",
+            "Contact our support team",
+            "Participate in surveys or provide feedback"
+          ]
+        },
+        "dataUsage": {
+          "title": "3. How We Use Your Information",
+          "content": "We use the information we collect to:",
+          "items": [
+            "Provide, maintain, and improve our services",
+            "Process your registration and manage your account",
+            "Send you technical notices and support messages",
+            "Respond to your comments and questions",
+            "Analyze usage patterns to improve user experience"
+          ]
+        },
+        "dataSharing": {
+          "title": "4. Information Sharing",
+          "content": "We do not sell your personal information. We may share your information only in the following circumstances:",
+          "items": [
+            "With your consent",
+            "To comply with legal obligations",
+            "To protect our rights and prevent fraud",
+            "With service providers who assist in operating our platform"
+          ]
+        },
+        "dataSecurity": {
+          "title": "5. Data Security",
+          "content": "We implement appropriate technical and organizational measures to protect your personal information. However, no method of transmission over the Internet is 100% secure, and we cannot guarantee absolute security."
+        },
+        "yourRights": {
+          "title": "6. Your Rights",
+          "content": "You have the right to:",
+          "items": [
+            "Access your personal data",
+            "Correct inaccurate data",
+            "Request deletion of your data",
+            "Object to processing of your data",
+            "Export your data",
+            "Withdraw consent at any time"
+          ]
+        },
+        "cookies": {
+          "title": "7. Cookies",
+          "content": "We use essential cookies necessary for the platform to function properly. These cookies enable basic features like user authentication and security."
+        },
+        "contact": {
+          "title": "8. Contact Us",
+          "content": "If you have questions about this Privacy Policy, please contact us at: contact@virtualfixmed.com"
+        }
+      }
+    },
+    "termsOfService": {
+      "title": "Terms of Service",
+      "lastUpdated": "Last updated: January 11, 2026",
+      "sections": {
+        "acceptance": {
+          "title": "1. Acceptance of Terms",
+          "content": "By accessing and using Virtual Fixmed (\"the Platform\"), you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the Platform."
+        },
+        "description": {
+          "title": "2. Service Description",
+          "content": "Virtual Fixmed is an educational platform designed for medical training and education. The Platform provides access to educational content, interactive learning tools, and related services."
+        },
+        "userAccounts": {
+          "title": "3. User Accounts",
+          "content": "To use certain features, you must create an account. You are responsible for:",
+          "items": [
+            "Maintaining the confidentiality of your account credentials",
+            "All activities that occur under your account",
+            "Notifying us immediately of any unauthorized use",
+            "Providing accurate and complete registration information"
+          ]
+        },
+        "acceptableUse": {
+          "title": "4. Acceptable Use",
+          "content": "You agree not to:",
+          "items": [
+            "Violate any applicable laws or regulations",
+            "Infringe upon the rights of others",
+            "Distribute malware or harmful code",
+            "Attempt to gain unauthorized access to the Platform",
+            "Use the Platform for any commercial purpose without permission",
+            "Share your account credentials with others"
+          ]
+        },
+        "intellectualProperty": {
+          "title": "5. Intellectual Property",
+          "content": "All content, features, and functionality of the Platform are owned by Virtual Fixmed and are protected by copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, or create derivative works without our express written permission."
+        },
+        "disclaimer": {
+          "title": "6. Disclaimer",
+          "content": "The Platform is provided \"as is\" without warranties of any kind. We do not guarantee that the Platform will be error-free or uninterrupted. The educational content is for informational purposes only and does not constitute professional medical advice."
+        },
+        "limitation": {
+          "title": "7. Limitation of Liability",
+          "content": "To the maximum extent permitted by law, Virtual Fixmed shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the Platform."
+        },
+        "termination": {
+          "title": "8. Termination",
+          "content": "We reserve the right to suspend or terminate your account at any time for violation of these Terms or for any other reason at our discretion. You may also terminate your account at any time by contacting us."
+        },
+        "changes": {
+          "title": "9. Changes to Terms",
+          "content": "We may modify these Terms at any time. We will notify you of significant changes by posting a notice on the Platform or sending you an email. Your continued use after such changes constitutes acceptance of the modified Terms."
+        },
+        "contact": {
+          "title": "10. Contact Information",
+          "content": "For questions about these Terms of Service, please contact us at: contact@virtualfixmed.com"
+        }
+      }
+    },
+    "products": {
+      "title": "Products",
+      "catalog": "Catalog",
+      "my": "My Products",
+      "error": "Error loading products",
+      "retry": "Retry",
+      "noResults": "No products found",
+      "noResultsHint": "Try adjusting your search or filters",
+      "noPurchasedProducts": "No purchased products",
+      "noPurchasedProductsHint": "Browse the catalog to get started",
+      "tabs": {
+        "catalog": "Catalog",
+        "catalog_short": "Catalog",
+        "my_learning": "My Products",
+        "my_learning_short": "My Products",
+        "endometriosis": "Endometriosis",
+        "endometriosis_diary": "Pain diary",
+        "endometriosis_visualization": "Visualization",
+        "endometriosis_advice": "When should you contact the doctor?"
+      },
+      "filters": {
+        "searchPlaceholderCatalog": "Search products...",
+        "searchPlaceholderMyproducts": "Search my products...",
+        "filters": "Filters",
+        "activeFilters": "Active filters:",
+        "search": "Search",
+        "clearAll": "Clear all",
+        "results": {
+          "found": "{{count}} product found",
+          "found_other": "{{count}} products found"
+        },
+        "sort": {
+          "label": "Sort by",
+          "name": "Name",
+          "popular": "Most popular",
+          "priceLow": "Price: Low to High",
+          "priceHigh": "Price: High to Low",
+          "newest": "Newest first"
+        }
+      },
+      "product": {
+        "enterProduct": "Enter product",
+        "checkMoreInfo": "Learn more",
+        "purchased": "Purchased",
+        "buyNow": "Buy now",
+        "aboutProduct": "About this product",
+        "backToCatalog": "Back to catalog",
+        "notFound": "Product not found",
+        "documentTitle": "{{title}} - Virtual Fixmed",
+        "documentTitleLoading": "Loading... - Virtual Fixmed",
+        "title": "Product Details"
+      }
+    },
+    "lecturerCourses": {
+      "card": {
+        "currency": "PLN"
+      }
+    }
+  },
+  "navigation": {
+    "platform": "Platform"
+  },
+  "endometriosis": {
+    "loading": "Loading...",
+    "saving": "Saving...",
+    "info": {
+      "documenttitle": "Endometriosis - Information",
+      "title": "Articles",
+      "subtitle": "Database of articles written by experts.",
+      "addarticle": "Add article",
+      "noarticles": "No articles."
+    },
+    "editor": {
+      "title": "Title",
+      "content": "Content"
+    },
+    "diary": {
+      "newentry": "New entry",
+      "saveentry": "Save entry",
+      "noentries": "No entries saved.",
+      "date": "Date",
+      "cycleday": "Cycle day",
+      "painlevel": "Pain level",
+      "painlocation": "Pain location",
+      "painlocation_examples": "e.g. lower abdomen, lower back",
+      "symptoms": "Additional symptoms",
+      "symptoms_examples": "e.g. bloating, nausea, fatigue...",
+      "entryjournal": "Entry journal",
+      "last6months": {
+        "title": "What have you been through in the last 6 months?",
+        "surgicalprocedure": "Surgical procedure",
+        "surgicalprocedure_examples": "E.g. laparoscopy, cyst removal...",
+        "whatsurgery": "What surgery did you undergo?",
+        "hormonaltreatment": "Hormonal treatment",
+        "imagingtests": "Imaging tests (USG/MRI)"
+      }
+    },
+    "visualization": {
+      "title": "Pain level visualization",
+      "subtitle": "Each box represents the declared pain level for that day.",
+      "weekdays": [
+        "Mon",
+        "Tue",
+        "Wen",
+        "Th",
+        "Fri",
+        "Sat",
+        "Sun"
+      ],
+      "legend": "Legend",
+      "nodata": "No data",
+      "pain": {
+        "01": "No pain",
+        "23": "Low pain",
+        "46": "Moderate pain",
+        "78": "Big pain",
+        "910": "Very big pain"
+      },
+      "today": "Today"
+    },
+    "advice": {
+      "title": "Education",
+      "subtitle": "Comprehensive information on the symptoms, diagnosis and treatment of endometriosis.",
+      "abouttab": "About endometriosis",
+      "diagnosistab": "Diagnosis",
+      "treatmenttab": "Treatment",
+      "c1s1title": "What is endometriosis?",
+      "c1s1subtitle": "Basic information about the disease",
+      "c1s1content": [
+        "Endometriosis is a chronic disease in which tissue similar to the uterine lining occurs outside the uterine cavity - most often in the pelvic area, but it can also appear in other locations. It is estimated that it affects up to 10% of women of reproductive age.",
+        "Typical symptoms of endometriosis include chronic pelvic pain, painful periods, pain during intercourse, and difficulty conceiving.",
+        "The disease may be asymptomatic or present with severe symptoms that negatively impact daily functioning."
+      ],
+      "c1s2title": "Symptoms of endometriosis",
+      "c1s2content": [
+        "Painful, heavy, or prolonged periods",
+        "Pain during intercourse",
+        "Pain during urination and defecation",
+        "Chronic lower abdominal pain",
+        "Infertility",
+        "Chronic fatigue"
+      ],
+      "c2s1title": "Diagnosing endometriosis",
+      "c2s1subtitle": "How to recognize endometriosis - diagnostic path",
+      "c2s1content": "The diagnosis of endometriosis is based on a thorough medical history, a gynecological examination, and imaging (usually transvaginal ultrasound, sometimes magnetic resonance imaging). Definitive diagnosis often requires laparoscopy, during which a sample is collected for histopathological examination.",
+      "c2s1list": [
+        "Detailed interview regarding symptoms",
+        "Gynecological examination",
+        "Ultrasound of the reproductive organs (preferably transvaginal)",
+        "Other imaging tests (MRI)",
+        "Diagnostic laparoscopy"
+      ],
+      "c3s1title": "Treatment options",
+      "c3s1subtitle": "Endometriosis treatment methods",
+      "c3s1content": [
+        "Pharmacotherapy: Hormonal medication (e.g., birth control pills, progestogens, GnRH agonists) to suppress menstruation and reduce pain.",
+        "Pain management: Use of painkillers and nonsteroidal anti-inflammatory drugs.",
+        "Surgical treatment: Removal of endometrial lesions during laparoscopy.",
+        "Psychological support and physiotherapy: Therapies to support pain management and daily functioning."
+      ]
+    }
+  },
+  "patients": {
+    "title": "Patients",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "createdAt": "Creation date",
+    "loading": "Loading...",
+    "detail": {
+      "back": "Back to list",
+      "unknownPatient": "Unknown patient",
+      "errorPatient": "Failed to load patient data.",
+      "errorEntries": "Failed to load diary entries.",
+      "filter": {
+      "dateRange": "Data range",
+      "clear": "Show all"
+      },
+      "tabs": {
+        "visualization": "Visualization",
+        "prognosis": "Prognosis"
+      },
+      "visualization": {
+        "chartTitle": "Pain level over time",
+        "tableTitle": "Diary entries",
+        "noData": "No data to display.",
+        "date": "Date"
+      },
+      "prognosis": {
+        "title": "Endometriosis risk assessment",
+        "riskDescription": "Score calculated from the patient's diary entries.",
+        "noData": "No entries to calculate prognosis.",
+        "riskLow": "Low risk",
+        "riskMedium": "Moderate risk",
+        "riskHigh": "High risk",
+        "avgPain": "Avg. pain level",
+        "highPainEntries": "Entries with pain ≥7",
+        "totalEntries": "Total entries",
+        "medicalFactors": "Medical factors"
+      }
+    }
+  },
+  "auth": {
+    "login": "Log in",
+    "signUp": "Sign up",
+    "email": "Email",
+    "emailPlaceholder": "m@example.com",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "confirmPassword": "Confirm password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "firstName": "First name",
+    "firstNamePlaceholder": "John",
+    "lastName": "Last name",
+    "lastNamePlaceholder": "Doe",
+    "forgotPassword": "Forgot password?",
+    "noAccount": "Don't have an account?",
+    "alreadyHaveAccount": "Already have an account?",
+    "createAccount": "Create account",
+    "createAccountDescription": "Enter your details to create your account",
+    "loginDescription": "Enter your credentials to access your account",
+    "welcomeBack": "Welcome back",
+    "loginWithGoogle": "Login with Google",
+    "signUpWithGoogle": "Sign up with Google",
+    "orContinueWith": "Or continue with",
+    "orContinueWithEmail": "Or continue with email",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "goToLogin": "Go to login",
+    "returnToLogin": "Return to login",
+    "registrationSuccessTitle": "Check your email",
+    "registrationSuccessMessage": "We've sent you a confirmation email. Please check your inbox and click the link to verify your account.",
+    "termsAndPrivacy": "By continuing, you agree to our {{termsLink}} and {{privacyLink}}",
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "form": {
+    "email": "Email",
+    "emailPlaceholder": "Enter your email"
+  },
+  "forgotPassword": {
+    "title": "Forgot password",
+    "description": "Enter your email address and we'll send you a link to reset your password",
+    "submit": "Send reset link"
+  },
+  "updatePassword": {
+    "title": "Update password",
+    "description": "Enter your new password",
+    "newPassword": "New password",
+    "confirmPassword": "Confirm password",
+    "submit": "Update password",
+    "error": "Failed to update password",
+    "errorTitle": "Something went wrong",
+    "errorDescription": "The password reset link is invalid or has expired",
+    "resend": "Resend link",
+    "resending": "Sending...",
+    "resendSuccess": "Password reset link sent! Check your email."
+  },
+  "validation": {
+    "required": "This field is required",
+    "invalidEmail": "Invalid email address",
+    "passwordMinLength": "Password must be at least 8 characters",
+    "passwordRequiresLowercase": "Password must contain a lowercase letter",
+    "passwordRequiresUppercase": "Password must contain an uppercase letter",
+    "passwordRequiresDigit": "Password must contain a number",
+    "passwordRequiresSymbol": "Password must contain a special character",
+    "passwordsDoNotMatch": "Passwords do not match",
+    "passwordTooShort": "Password is too short",
+    "passwordRequirements": {
+      "title": "Password must contain:",
+      "minLength": "At least 8 characters",
+      "lowercase": "One lowercase letter",
+      "uppercase": "One uppercase letter",
+      "digit": "One number",
+      "symbol": "One special character"
+    },
+    "profile": {
+      "firstNameRequired": "First name is required",
+      "firstNameMinLength": "First name must be at least 2 characters",
+      "firstNameMaxLength": "First name must be at most 50 characters",
+      "firstNameInvalidChars": "First name contains invalid characters",
+      "lastNameRequired": "Last name is required",
+      "lastNameMinLength": "Last name must be at least 2 characters",
+      "lastNameMaxLength": "Last name must be at most 50 characters",
+      "lastNameInvalidChars": "Last name contains invalid characters",
+      "emailInvalid": "Invalid email address",
+      "emailRequired": "Email is required",
+      "titleMaxLength": "Title must be at most 100 characters",
+      "universityMaxLength": "University must be at most 200 characters"
+    }
+  },
+  "errors": {
+    "invalidLoginCredentials": "Invalid email or password",
+    "userAlreadyRegistered": "User already registered",
+    "networkError": "Network error. Please try again.",
+    "unknownError": "An error occurred. Please try again.",
+    "emailNotConfirmed": "Please confirm your email before logging in",
+    "internal_server_error": "Internal server error. Please try again later."
+  },
+  "common": {
+    "submitting": "Submitting...",
+    "cancel": "Cancel",
+    "error": "Error",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "user": {
+    "defaultName": "User"
+  },
+  "userMenu": {
+    "account": "Account",
+    "billing": "Billing",
+    "logout": "Log out"
+  },
+  "account": {
+    "title": "Account",
+    "profile": {
+      "title": "Profile",
+      "description": "Manage your personal information.",
+      "save": "Save changes",
+      "saving": "Saving...",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "googleAccount": "Google account",
+      "resendVerification": "Resend verification email",
+      "emailOAuthNote": "Email is managed by your OAuth provider.",
+      "settingsSaved": "Settings saved",
+      "settingsSavedDesc": "Your profile has been updated.",
+      "verificationSent": "Verification email sent",
+      "verificationNote": "Check your inbox to verify your email address.",
+      "roles": {
+        "user": "User",
+        "admin": "Admin"
+      }
+    },
+    "security": {
+      "title": "Security",
+      "description": "Manage your sign-in and security settings.",
+      "password": "Password",
+      "passwordOAuthNote": "Password is managed by your OAuth provider.",
+      "passwordVerificationRequired": "Please verify your email to change your password.",
+      "changePassword": "Change password",
+      "passwordResetSent": "Password reset email sent",
+      "passwordResetNote": "Check your email to reset your password.",
+      "twoFactor": "Two-factor authentication",
+      "twoFactorDescription": "Add an extra layer of security to your account.",
+      "configure": "Configure"
+    },
+    "privacy": {
+      "deleteAccount": "Delete account",
+      "deleteAccountDesc": "Permanently delete your account and all associated data."
+    },
+    "deleteAccount": {
+      "title": "Delete account",
+      "description": "This action cannot be undone.",
+      "warning": "Type DELETE to confirm.",
+      "confirmationLabel": "Delete confirmation",
+      "confirmationHint": "Type DELETE to confirm account deletion",
+      "confirm": "Delete account permanently",
+      "deleting": "Deleting...",
+      "affectedData": {
+        "title": "Data that will be deleted:",
+        "profile": "Profile data (first name, last name, email)",
+        "billing": "Payment history and invoices",
+        "data": "All other account-related data"
+      },
+      "error": {
+        "title": "Unable to delete account",
+        "description": "Please try again later."
+      }
+    }
+  },
+  "billing": {
+    "description": "Manage your subscription and invoices.",
+    "error": {
+      "description": "Something went wrong. Please try again."
+    },
+    "subscription": {
+      "noSubscription": "No active subscription",
+      "noSubscriptionDesc": "Select a plan to get started.",
+      "selectPlan": "Select plan",
+      "active": "Active",
+      "inactive": "Inactive",
+      "planFeatures": "Plan features",
+      "manageSubscription": "Manage subscription"
+    },
+    "paymentManagement": {
+      "title": "Payment management",
+      "description": "Manage your payment methods.",
+      "descriptionText": "Open the billing portal to update your card and view invoices.",
+      "openPortal": "Open billing portal"
+    },
+    "invoices": {
+      "title": "Invoices",
+      "noInvoices": "No invoices found.",
+      "download": "Download",
+      "downloading": "Downloading...",
+      "invoiceNumber": "Invoice #",
+      "issueDate": "Issue date",
+      "amount": "Amount",
+      "status": "Status",
+      "description": "Description",
+      "actions": "Actions",
+      "previous": "Previous",
+      "next": "Next",
+      "showing": "Showing {{from}}-{{to}} of {{total}}",
+      "statuses": {
+        "paid": "Paid",
+        "pending": "Pending",
+        "failed": "Failed",
+        "draft": "Draft"
+      }
+    }
+  },
+  "currency": {
+    "showLocalizedPrice": "Show localized price",
+    "showOriginalPrice": "Show original PLN price",
+    "disclaimer": "Displayed price is an estimate in {{currency}}. Final amount may vary."
+  },
+  "cookieConsent": {
+    "title": "Cookies",
+    "description": "We use essential cookies to ensure the app works correctly. These cookies are necessary for basic functionality.",
+    "byClickingAccept": "By clicking Accept you consent to the use of these cookies.",
+    "learnMore": "Learn more",
+    "decline": "Decline",
+    "accept": "Accept"
+  },
+  "payment": {
+    "success": {
+      "title": "Payment Successful"
+    },
+    "cancelled": {
+      "title": "Payment Cancelled"
+    }
+  }
+}

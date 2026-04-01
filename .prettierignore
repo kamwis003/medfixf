@@ -1,0 +1,29 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+build
+.next
+
+# Coverage
+coverage
+
+# Lock files
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Environment files
+.env*
+
+# IDE
+.vscode
+.idea
+
+# Minified files
+*.min.js
+*.min.css
+
+# Translations
+public/locales

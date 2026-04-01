@@ -1,0 +1,651 @@
+{
+  "app": {
+    "name": "Virtual Fixmed"
+  },
+  "welcome": "Witaj w Virtual Fixmed!",
+  "poweredBy": "Wspierane przez Vite, React, i i18next.",
+  "counterButton": "Licznik wynosi {{count}}",
+  "theme": {
+    "toggle": "Zmień motyw",
+    "light": "Jasny",
+    "dark": "Ciemny",
+    "auto": "Systemowy"
+  },
+  "notFound": {
+    "title": "404",
+    "description": "Wygląda na to, że zabłądziłeś w nieznane rejony cyfrowego świata.",
+    "returnButton": "Wróć do strony głównej",
+    "message": "Strona nie znaleziona",
+    "goHome": "Przejdź do strony głównej"
+  },
+  "pages": {
+    "home": "Strona główna",
+    "notFound": "Strona nie znaleziona",
+    "dashboard": "Dashboard",
+    "billing": "Płatności",
+    "forgotPassword": "Zapomniałeś hasła",
+    "register": "Rejestracja",
+    "login": "Logowanie",
+    "privacyPolicy": {
+      "title": "Polityka prywatności",
+      "lastUpdated": "Ostatnia aktualizacja: 11 stycznia 2026",
+      "sections": {
+        "introduction": {
+          "title": "1. Wprowadzenie",
+          "content": "Virtual Fixmed (\"my\", \"nasz\" lub \"nas\") jest zaangażowany w ochronę Twojej prywatności. Niniejsza Polityka Prywatności wyjaśnia, w jaki sposób gromadzimy, wykorzystujemy, ujawniamy i chronimy Twoje informacje podczas korzystania z naszej platformy edukacyjnej."
+        },
+        "dataCollection": {
+          "title": "2. Informacje, które zbieramy",
+          "content": "Zbieramy informacje, które przekazujesz nam bezpośrednio, gdy:",
+          "items": [
+            "Tworzysz konto (email, imię, hasło)",
+            "Korzystasz z naszej platformy i usług",
+            "Kontaktujesz się z naszym zespołem wsparcia",
+            "Bierzesz udział w ankietach lub przekazujesz opinię"
+          ]
+        },
+        "dataUsage": {
+          "title": "3. Jak wykorzystujemy Twoje informacje",
+          "content": "Wykorzystujemy zebrane informacje do:",
+          "items": [
+            "Świadczenia, utrzymywania i ulepszania naszych usług",
+            "Przetwarzania rejestracji i zarządzania Twoim kontem",
+            "Wysyłania powiadomień technicznych i wiadomości wsparcia",
+            "Odpowiadania na Twoje komentarze i pytania",
+            "Analizy wzorców użytkowania w celu poprawy doświadczenia użytkownika"
+          ]
+        },
+        "dataSharing": {
+          "title": "4. Udostępnianie informacji",
+          "content": "Nie sprzedajemy Twoich danych osobowych. Możemy udostępniać Twoje informacje tylko w następujących okolicznościach:",
+          "items": [
+            "Za Twoją zgodą",
+            "W celu wypełnienia obowiązków prawnych",
+            "W celu ochrony naszych praw i zapobiegania oszustwom",
+            "Dostawcom usług, którzy pomagają w prowadzeniu naszej platformy"
+          ]
+        },
+        "dataSecurity": {
+          "title": "5. Bezpieczeństwo danych",
+          "content": "Wdrażamy odpowiednie środki techniczne i organizacyjne w celu ochrony Twoich danych osobowych. Jednak żadna metoda transmisji przez Internet nie jest w 100% bezpieczna i nie możemy zagwarantować absolutnego bezpieczeństwa."
+        },
+        "yourRights": {
+          "title": "6. Twoje prawa",
+          "content": "Masz prawo do:",
+          "items": [
+            "Dostępu do swoich danych osobowych",
+            "Poprawiania nieprawidłowych danych",
+            "Żądania usunięcia swoich danych",
+            "Sprzeciwu wobec przetwarzania danych",
+            "Eksportowania swoich danych",
+            "Wycofania zgody w dowolnym momencie"
+          ]
+        },
+        "cookies": {
+          "title": "7. Pliki cookie",
+          "content": "Używamy niezbędnych plików cookie koniecznych do prawidłowego działania platformy. Te pliki cookie umożliwiają podstawowe funkcje, takie jak uwierzytelnianie użytkownika i bezpieczeństwo."
+        },
+        "contact": {
+          "title": "8. Kontakt",
+          "content": "Jeśli masz pytania dotyczące niniejszej Polityki Prywatności, skontaktuj się z nami pod adresem: contact@virtualfixmed.com"
+        }
+      }
+    },
+    "termsOfService": {
+      "title": "Regulamin",
+      "lastUpdated": "Ostatnia aktualizacja: 11 stycznia 2026",
+      "sections": {
+        "acceptance": {
+          "title": "1. Akceptacja warunków",
+          "content": "Uzyskując dostęp i korzystając z Virtual Fixmed (\"Platforma\"), akceptujesz i zgadzasz się przestrzegać niniejszego Regulaminu. Jeśli nie zgadzasz się z tymi warunkami, prosimy o niekorzystanie z Platformy."
+        },
+        "description": {
+          "title": "2. Opis usługi",
+          "content": "Virtual Fixmed to platforma edukacyjna przeznaczona do szkolenia i edukacji medycznej. Platforma zapewnia dostęp do treści edukacyjnych, interaktywnych narzędzi uczenia się i powiązanych usług."
+        },
+        "userAccounts": {
+          "title": "3. Konta użytkowników",
+          "content": "Aby korzystać z niektórych funkcji, musisz utworzyć konto. Jesteś odpowiedzialny za:",
+          "items": [
+            "Zachowanie poufności danych logowania do konta",
+            "Wszystkie działania wykonywane na Twoim koncie",
+            "Natychmiastowe powiadomienie nas o nieautoryzowanym użyciu",
+            "Podanie dokładnych i kompletnych informacji rejestracyjnych"
+          ]
+        },
+        "acceptableUse": {
+          "title": "4. Dopuszczalne użycie",
+          "content": "Zgadzasz się nie:",
+          "items": [
+            "Naruszać obowiązujących przepisów prawa",
+            "Naruszać praw innych osób",
+            "Dystrybuować złośliwego oprogramowania lub szkodliwego kodu",
+            "Próbować uzyskać nieautoryzowany dostęp do Platformy",
+            "Używać Platformy w celach komercyjnych bez pozwolenia",
+            "Udostępniać swoich danych logowania innym osobom"
+          ]
+        },
+        "intellectualProperty": {
+          "title": "5. Własność intelektualna",
+          "content": "Wszystkie treści, funkcje i funkcjonalności Platformy są własnością Virtual Fixmed i są chronione prawami autorskimi, znakami towarowymi i innymi prawami własności intelektualnej. Nie możesz powielać, rozpowszechniać ani tworzyć dzieł pochodnych bez naszej wyraźnej pisemnej zgody."
+        },
+        "disclaimer": {
+          "title": "6. Wyłączenie odpowiedzialności",
+          "content": "Platforma jest dostarczana \"tak jak jest\" bez jakichkolwiek gwarancji. Nie gwarantujemy, że Platforma będzie wolna od błędów lub nieprzerwana. Treści edukacyjne służą wyłącznie celom informacyjnym i nie stanowią profesjonalnej porady medycznej."
+        },
+        "limitation": {
+          "title": "7. Ograniczenie odpowiedzialności",
+          "content": "W maksymalnym zakresie dozwolonym przez prawo Virtual Fixmed nie ponosi odpowiedzialności za jakiekolwiek szkody pośrednie, przypadkowe, specjalne, wynikowe lub karne wynikające z korzystania z Platformy."
+        },
+        "termination": {
+          "title": "8. Zakończenie",
+          "content": "Zastrzegamy sobie prawo do zawieszenia lub zakończenia Twojego konta w dowolnym momencie z powodu naruszenia niniejszego Regulaminu lub z jakiegokolwiek innego powodu według naszego uznania. Możesz również zakończyć swoje konto w dowolnym momencie, kontaktując się z nami."
+        },
+        "changes": {
+          "title": "9. Zmiany w Regulaminie",
+          "content": "Możemy modyfikować niniejszy Regulamin w dowolnym momencie. Powiadomimy Cię o istotnych zmianach, publikując ogłoszenie na Platformie lub wysyłając e-mail. Kontynuowanie korzystania po takich zmianach stanowi akceptację zmodyfikowanego Regulaminu."
+        },
+        "contact": {
+          "title": "10. Informacje kontaktowe",
+          "content": "W przypadku pytań dotyczących niniejszego Regulaminu skontaktuj się z nami pod adresem: contact@virtualfixmed.com"
+        }
+      }
+    },
+    "products": {
+      "title": "Produkty",
+      "catalog": "Katalog",
+      "my": "Moje Produkty",
+      "error": "Błąd ładowania produktów",
+      "retry": "Spróbuj ponownie",
+      "noResults": "Nie znaleziono produktów",
+      "noResultsHint": "Spróbuj dostosować wyszukiwanie lub filtry",
+      "noPurchasedProducts": "Brak zakupionych produktów",
+      "noPurchasedProductsHint": "Przeglądaj katalog, aby rozpocząć",
+      "fertility_title": "Płodność",
+      "tabs": {
+        "catalog": "Katalog",
+        "catalog_short": "Katalog",
+        "my_learning": "Moje Produkty",
+        "my_learning_short": "Moje Produkty",
+        "endometriosis": "Endometrioza",
+        "endometriosis_diary": "Dziennik bólu",
+        "endometriosis_visualization": "Wizualizacja",
+        "endometriosis_advice": "Kiedy skontaktować się z lekarzem?"
+      },
+      "filters": {
+        "searchPlaceholderCatalog": "Szukaj produktów...",
+        "searchPlaceholderMyproducts": "Szukaj moich produktów...",
+        "filters": "Filtry",
+        "activeFilters": "Aktywne filtry:",
+        "search": "Szukaj",
+        "clearAll": "Wyczyść wszystko",
+        "results": {
+          "found": "Znaleziono {{count}} produkt",
+          "found_other": "Znaleziono {{count}} produktów"
+        },
+        "sort": {
+          "label": "Sortuj według",
+          "name": "Nazwa",
+          "popular": "Najpopularniejsze",
+          "priceLow": "Cena: Od najniższej",
+          "priceHigh": "Cena: Od najwyższej",
+          "newest": "Najnowsze"
+        }
+      },
+      "product": {
+        "enterProduct": "Wejdź do produktu",
+        "checkMoreInfo": "Dowiedz się więcej",
+        "purchased": "Zakupiono",
+        "buyNow": "Kup teraz",
+        "aboutProduct": "O tym produkcie",
+        "backToCatalog": "Powrót do katalogu",
+        "notFound": "Produkt nie znaleziony",
+        "documentTitle": "{{title}} - Virtual Fixmed",
+        "documentTitleLoading": "Ładowanie... - Virtual Fixmed",
+        "title": "Szczegóły produktu"
+      }
+    },
+    "lecturerCourses": {
+      "card": {
+        "currency": "PLN"
+      }
+    }
+  },
+  "navigation": {
+    "platform": "Platforma"
+  },
+  "endometriosis": {
+    "loading": "Ładowanie...",
+    "saving": "Zapisywanie…",
+    "info": {
+      "documenttitle": "Endometrioza - Informacje",
+      "title": "Artykuły",
+      "subtitle": "Baza artykułów napisanych przez ekspertów.",
+      "addarticle": "Dodaj artykuł",
+      "noarticles": "Brak artykułów."
+    },
+    "editor": {
+      "title": "Tytuł",
+      "content": "Treść",
+      "cancel": "Anuluj",
+      "publish": "Opublikuj"
+    },
+    "diary": {
+      "newentry": "Nowy wpis",
+      "saveentry": "Zapisz wpis",
+      "noentries": "Brak zapisanych wpisów.",
+      "date": "Data",
+      "cycleday": "Dzień cyklu",
+      "painlevel": "Natężenie bólu",
+      "painlocation": "Lokalizacja bólu",
+      "painlocation_examples": "np. podbrzusze, dolna część pleców",
+      "symptoms": "Dodatkowe objawy",
+      "symptoms_examples": "np. wzdęcia, nudności, zmęczenie...",
+      "entryjournal": "Dziennik wpisów",
+      "last6months": {
+        "title": "Co przeszłaś w ostatnich 6 miesiącach?",
+        "surgicalprocedure": "Zabieg operacyjny",
+        "surgicalprocedure_examples": "Np. laparoskopia, usunięcie torbieli...",
+        "whatsurgery": "Jaką operację przeszłaś?",
+        "hormonaltreatment": "Leczenie hormonalne",
+        "imagingtests": "Badania obrazowe (USG/MRI)"
+      }
+    },
+    "visualization": {
+      "title": "Wizualizacja natężenia bólu",
+      "subtitle": "Każde pole przedstawia zadeklarowany poziom bólu dla danego dnia.",
+      "weekdays": [
+        "Pon",
+        "Wt",
+        "Śr",
+        "Czw",
+        "Pt",
+        "Sob",
+        "Nd"
+      ],
+      "legend": "Legenda",
+      "nodata": "Brak danych",
+      "pain": {
+        "01": "Brak bólu",
+        "23": "Niski ból",
+        "46": "Umiarkowany ból",
+        "78": "Duży ból",
+        "910": "Bardzo duży ból"
+      },
+      "today": "Dzisiaj"
+    },
+    "advice": {
+      "title": "Edukacja",
+      "subtitle": "Kompleksowe informacje dotyczące objawów, diagnostyki i leczenia endometriozy.",
+      "abouttab": "O endometriozie",
+      "diagnosistab": "Diagnoza",
+      "treatmenttab": "Leczenie",
+      "c1s1title": "Czym jest endometrioza?",
+      "c1s1subtitle": "Podstawowe informacje dotyczące choroby",
+      "c1s1content": [
+        "Endometrioza to przewlekła choroba, w której tkanka podobna do błony śluzowej macicy występuje poza jamą macicy — najczęściej w obrębie miednicy, ale może pojawić się także w innych miejscach. Szacuje się, że dotyka nawet 10% kobiet w wieku rozrodczym.",
+        "Typowe objawy endometriozy to przewlekły ból miednicy, bolesne miesiączki, bóle podczas współżycia, a także trudności z zajściem w ciążę.",
+        "Choroba może przebiegać bezobjawowo lub z bardzo nasilonymi symptomami, które negatywnie wpływają na codzienne funkcjonowanie."
+      ],
+      "c1s2title": "Objawy endometriozy",
+      "c1s2content": [
+        "Bolesne, obfite lub przedłużające się miesiączki",
+        "Ból podczas współżycia",
+        "Ból podczas oddawania moczu i wypróżniania",
+        "Przewlekły ból w dolnej części brzucha",
+        "Niepłodność",
+        "Przewlekłe zmęczenie"
+      ],
+      "c1vidtitle": "Czym jest endometrioza?",
+      "c1viddesc": "Podstawowe informacje o endometriozie: co to za choroba, kogo dotyczy i jakie są jej symptomy.",
+      "c2s1title": "Diagnozowanie endometriozy",
+      "c2s1subtitle": "Jak rozpoznać endometriozę - ścieżka diagnostyczna",
+      "c2s1content": "Diagnoza endometriozy opiera się na dokładnym wywiadzie lekarskim, badaniu ginekologicznym i obrazowym (najczęściej USG dopochwowym, czasem rezonans magnetyczny). Ostateczne rozpoznanie często wymaga zabiegu laparoskopii, podczas którego pobierany jest wycinek do badania histopatologicznego.",
+      "c2s1list": [
+        "Szczegółowy wywiad dotyczący objawów",
+        "Badanie ginekologiczne",
+        "USG narządu rodnego (preferowane przezpochwowe)",
+        "Inne badania obrazowe (MRI)",
+        "Laparoskopia diagnostyczna"
+      ],
+      "c3s1title": "Możliwości leczenia",
+      "c3s1subtitle": "Metody terapii endometriozy",
+      "c3s1content": [
+        "Farmakoterapia: Leczenie lekami hormonalnymi (np. tabletki antykoncepcyjne, progestageny, agonisty GnRH) w celu zahamowania miesiączki i zmniejszenia dolegliwości bólowych.",
+        "Leczenie przeciwbólowe: Stosowanie leków przeciwbólowych, niesteroidowych leków przeciwzapalnych.",
+        "Leczenie chirurgiczne: Usuwanie zmian endometrialnych podczas laparoskopii.",
+        "Wsparcie psychologiczne i fizjoterapia:  Terapie wspomagające radzenie sobie z bólem i codziennym funkcjonowaniem."
+      ]
+    }
+  },
+  "fertility": {
+    "title": "Śledzenie Płodności",
+    "dashboard": {
+      "title": "Dashboard Płodności",
+      "overview": "Przegląd",
+      "currentCycle": "Obecny cykl",
+      "nextPeriod": "Następny okres",
+      "fertileWindow": "Okno płodności"
+    },
+    "tracking": {
+      "title": "Śledzenie Cyklu",
+      "periodStart": "Początek okresu",
+      "periodEnd": "Koniec okresu",
+      "cycleLength": "Długość cyklu",
+      "flowIntensity": "Intensywność krwawienia",
+      "symptoms": "Objawy",
+      "notes": "Notatki",
+      "addEntry": "Dodaj wpis",
+      "editEntry": "Edytuj wpis",
+      "deleteEntry": "Usuń wpis",
+      "flow": {
+        "light": "Lekkie",
+        "medium": "Średnie",
+        "heavy": "Obfite"
+      }
+    },
+    "calendar": {
+      "title": "Kalendarz Płodności",
+      "month": "Miesiąc",
+      "week": "Tydzień",
+      "day": "Dzień",
+      "period": "Okres",
+      "ovulation": "Owulacja",
+      "fertile": "Płodny",
+      "predicted": "Przewidywany"
+    },
+    "education": {
+      "title": "Edukacja",
+      "cycleBasics": "Podstawy cyklu",
+      "fertilityAwareness": "Świadomość płodności",
+      "healthTips": "Wskazówki zdrowotne",
+      "commonQuestions": "Najczęstsze pytania"
+    },
+    "consultation": {
+      "title": "Konsultacje",
+      "bookAppointment": "Umów wizytę",
+      "selectSpecialist": "Wybierz specjalistę",
+      "selectDate": "Wybierz datę",
+      "selectTime": "Wybierz godzinę",
+      "consultationType": "Typ konsultacji",
+      "online": "Online",
+      "inPerson": "Stacjonarna",
+      "message": "Wiadomość do specjalisty",
+      "submit": "Zarezerwuj konsultację",
+      "cancel": "Anuluj"
+    }
+  },
+  "patients": {
+    "title": "Pacjenci",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "createdAt": "Data utworzenia",
+    "loading": "Ładowanie...",
+    "detail": {
+      "back": "Wróć do listy",
+      "unknownPatient": "Nieznany pacjent",
+      "errorPatient": "Nie udało się pobrać danych pacjenta.",
+      "errorEntries": "Nie udało się pobrać wpisów dziennika.",
+      "filter": {
+      "dateRange": "Zakres danych",
+      "clear": "Pokaż wszystko"
+      },
+      "tabs": {
+        "visualization": "Wizualizacja",
+        "prognosis": "Prognoza"
+      },
+      "visualization": {
+        "chartTitle": "Poziom bólu w czasie",
+        "tableTitle": "Wpisy dziennika",
+        "noData": "Brak danych do wyświetlenia.",
+        "date": "Data"
+      },
+      "prognosis": {
+        "title": "Ocena ryzyka endometriozy",
+        "riskDescription": "Wynik obliczany na podstawie wpisów dziennika pacjenta.",
+        "noData": "Brak wpisów do obliczenia prognozy.",
+        "riskLow": "Niskie ryzyko",
+        "riskMedium": "Umiarkowane ryzyko",
+        "riskHigh": "Wysokie ryzyko",
+        "avgPain": "Śr. poziom bólu",
+        "highPainEntries": "Wpisy z bólem ≥7",
+        "totalEntries": "Łączna liczba wpisów",
+        "medicalFactors": "Czynniki medyczne"
+      }
+    }
+  },
+  "auth": {
+    "login": "Zaloguj się",
+    "signUp": "Zarejestruj się",
+    "email": "Email",
+    "emailPlaceholder": "m@example.com",
+    "password": "Hasło",
+    "passwordPlaceholder": "Wprowadź swoje hasło",
+    "confirmPassword": "Potwierdź hasło",
+    "confirmPasswordPlaceholder": "Potwierdź swoje hasło",
+    "firstName": "Imię",
+    "firstNamePlaceholder": "Jan",
+    "lastName": "Nazwisko",
+    "lastNamePlaceholder": "Kowalski",
+    "forgotPassword": "Zapomniałeś hasła?",
+    "noAccount": "Nie masz konta?",
+    "alreadyHaveAccount": "Masz już konto?",
+    "createAccount": "Utwórz konto",
+    "createAccountDescription": "Wprowadź swoje dane, aby utworzyć konto",
+    "loginDescription": "Wprowadź swoje dane logowania, aby uzyskać dostęp do konta",
+    "welcomeBack": "Witaj ponownie",
+    "loginWithGoogle": "Zaloguj się przez Google",
+    "signUpWithGoogle": "Zarejestruj się przez Google",
+    "orContinueWith": "Lub kontynuuj z",
+    "orContinueWithEmail": "Lub kontynuuj z emailem",
+    "showPassword": "Pokaż hasło",
+    "hidePassword": "Ukryj hasło",
+    "goToLogin": "Przejdź do logowania",
+    "returnToLogin": "Wróć do logowania",
+    "registrationSuccessTitle": "Sprawdź swoją skrzynkę email",
+    "registrationSuccessMessage": "Wysłaliśmy Ci email z potwierdzeniem. Sprawdź swoją skrzynkę odbiorczą i kliknij link, aby zweryfikować swoje konto.",
+    "termsAndPrivacy": "Kontynuując, zgadzasz się z naszymi {{termsLink}} i {{privacyLink}}",
+    "termsOfService": "Regulaminem",
+    "privacyPolicy": "Polityką prywatności"
+  },
+  "form": {
+    "email": "Email",
+    "emailPlaceholder": "Wprowadź swój email"
+  },
+  "forgotPassword": {
+    "title": "Zapomniałeś hasła",
+    "description": "Wprowadź swój adres email, a wyślemy Ci link do resetowania hasła",
+    "submit": "Wyślij link resetujący"
+  },
+  "updatePassword": {
+    "title": "Zaktualizuj hasło",
+    "description": "Wprowadź nowe hasło",
+    "newPassword": "Nowe hasło",
+    "confirmPassword": "Potwierdź hasło",
+    "submit": "Zaktualizuj hasło",
+    "error": "Nie udało się zaktualizować hasła",
+    "errorTitle": "Coś poszło nie tak",
+    "errorDescription": "Link do resetowania hasła jest nieprawidłowy lub wygasł",
+    "resend": "Wyślij ponownie link",
+    "resending": "Wysyłanie...",
+    "resendSuccess": "Link do resetowania hasła został wysłany! Sprawdź swoją skrzynkę email."
+  },
+  "validation": {
+    "required": "To pole jest wymagane",
+    "invalidEmail": "Nieprawidłowy adres email",
+    "passwordMinLength": "Hasło musi mieć co najmniej 8 znaków",
+    "passwordRequiresLowercase": "Hasło musi zawierać małą literę",
+    "passwordRequiresUppercase": "Hasło musi zawierać wielką literę",
+    "passwordRequiresDigit": "Hasło musi zawierać cyfrę",
+    "passwordRequiresSymbol": "Hasło musi zawierać znak specjalny",
+    "passwordsDoNotMatch": "Hasła nie są takie same",
+    "passwordTooShort": "Hasło jest za krótkie",
+    "passwordRequirements": {
+      "title": "Hasło musi zawierać:",
+      "minLength": "Co najmniej 8 znaków",
+      "lowercase": "Jedną małą literę",
+      "uppercase": "Jedną wielką literę",
+      "digit": "Jedną cyfrę",
+      "symbol": "Jeden znak specjalny"
+    },
+    "profile": {
+      "firstNameRequired": "Imię jest wymagane",
+      "firstNameMinLength": "Imię musi mieć co najmniej 2 znaki",
+      "firstNameMaxLength": "Imię może mieć maksymalnie 50 znaków",
+      "firstNameInvalidChars": "Imię zawiera niedozwolone znaki",
+      "lastNameRequired": "Nazwisko jest wymagane",
+      "lastNameMinLength": "Nazwisko musi mieć co najmniej 2 znaki",
+      "lastNameMaxLength": "Nazwisko może mieć maksymalnie 50 znaków",
+      "lastNameInvalidChars": "Nazwisko zawiera niedozwolone znaki",
+      "emailInvalid": "Nieprawidłowy adres email",
+      "emailRequired": "Email jest wymagany",
+      "titleMaxLength": "Tytuł może mieć maksymalnie 100 znaków",
+      "universityMaxLength": "Uczelnia może mieć maksymalnie 200 znaków"
+    }
+  },
+  "errors": {
+    "invalidLoginCredentials": "Nieprawidłowy email lub hasło",
+    "userAlreadyRegistered": "Użytkownik jest już zarejestrowany",
+    "networkError": "Błąd sieci. Spróbuj ponownie.",
+    "unknownError": "Wystąpił błąd. Spróbuj ponownie.",
+    "emailNotConfirmed": "Potwierdź swój email przed zalogowaniem",
+    "internal_server_error": "Wewnętrzny błąd serwera. Spróbuj ponownie później."
+  },
+  "common": {
+    "submitting": "Wysyłanie...",
+    "cancel": "Anuluj",
+    "error": "Błąd",
+    "yes": "Tak",
+    "no": "Nie"
+  },
+  "user": {
+    "defaultName": "Użytkownik"
+  },
+  "userMenu": {
+    "account": "Konto",
+    "billing": "Płatności",
+    "logout": "Wyloguj się"
+  },
+  "account": {
+    "title": "Konto",
+    "profile": {
+      "title": "Profil",
+      "description": "Zarządzaj swoimi danymi osobowymi.",
+      "save": "Zapisz zmiany",
+      "saving": "Zapisywanie...",
+      "firstName": "Imię",
+      "lastName": "Nazwisko",
+      "email": "Email",
+      "googleAccount": "Konto Google",
+      "resendVerification": "Wyślij ponownie email weryfikacyjny",
+      "emailOAuthNote": "Adres email jest zarządzany przez Twojego dostawcę OAuth.",
+      "settingsSaved": "Zapisano ustawienia",
+      "settingsSavedDesc": "Twój profil został zaktualizowany.",
+      "verificationSent": "Wysłano email weryfikacyjny",
+      "verificationNote": "Sprawdź skrzynkę odbiorczą, aby zweryfikować adres email.",
+      "roles": {
+        "user": "Użytkownik",
+        "admin": "Administrator"
+      }
+    },
+    "security": {
+      "title": "Bezpieczeństwo",
+      "description": "Zarządzaj logowaniem i ustawieniami bezpieczeństwa.",
+      "password": "Hasło",
+      "passwordOAuthNote": "Hasło jest zarządzane przez Twojego dostawcę OAuth.",
+      "passwordVerificationRequired": "Zweryfikuj email, aby zmienić hasło.",
+      "changePassword": "Zmień hasło",
+      "passwordResetSent": "Wysłano email do resetowania hasła",
+      "passwordResetNote": "Sprawdź skrzynkę email, aby zresetować hasło.",
+      "twoFactor": "Uwierzytelnianie dwuskładnikowe",
+      "twoFactorDescription": "Dodaj dodatkową warstwę zabezpieczeń do konta.",
+      "configure": "Skonfiguruj"
+    },
+    "privacy": {
+      "deleteAccount": "Usuń konto",
+      "deleteAccountDesc": "Trwale usuń konto i wszystkie powiązane dane."
+    },
+    "deleteAccount": {
+      "title": "Usuń konto",
+      "description": "Tej operacji nie można cofnąć.",
+      "warning": "Aby potwierdzić, wpisz DELETE.",
+      "confirmationLabel": "Potwierdzenie usunięcia",
+      "confirmationHint": "Wpisz DELETE, aby potwierdzić usunięcie konta",
+      "confirm": "Usuń konto na zawsze",
+      "deleting": "Usuwanie...",
+      "affectedData": {
+        "title": "Dane, które zostaną usunięte:",
+        "profile": "Dane profilu (imię, nazwisko, email)",
+        "billing": "Historia płatności i faktur",
+        "data": "Wszystkie inne dane powiązane z kontem"
+      },
+      "error": {
+        "title": "Nie można usunąć konta",
+        "description": "Spróbuj ponownie później."
+      }
+    }
+  },
+  "billing": {
+    "description": "Zarządzaj subskrypcją i fakturami.",
+    "error": {
+      "description": "Coś poszło nie tak. Spróbuj ponownie."
+    },
+    "subscription": {
+      "noSubscription": "Brak aktywnej subskrypcji",
+      "noSubscriptionDesc": "Wybierz plan, aby rozpocząć.",
+      "selectPlan": "Wybierz plan",
+      "active": "Aktywna",
+      "inactive": "Nieaktywna",
+      "planFeatures": "Funkcje planu",
+      "manageSubscription": "Zarządzaj subskrypcją"
+    },
+    "paymentManagement": {
+      "title": "Zarządzanie płatnościami",
+      "description": "Zarządzaj metodami płatności.",
+      "descriptionText": "Otwórz portal rozliczeniowy, aby zaktualizować kartę i zobaczyć faktury.",
+      "openPortal": "Otwórz portal rozliczeniowy"
+    },
+    "invoices": {
+      "title": "Faktury",
+      "noInvoices": "Nie znaleziono faktur.",
+      "download": "Pobierz",
+      "downloading": "Pobieranie...",
+      "invoiceNumber": "Faktura #",
+      "issueDate": "Data wystawienia",
+      "amount": "Kwota",
+      "status": "Status",
+      "description": "Opis",
+      "actions": "Akcje",
+      "previous": "Poprzednia",
+      "next": "Następna",
+      "showing": "Wyświetlanie {{from}}-{{to}} z {{total}}",
+      "statuses": {
+        "paid": "Opłacona",
+        "pending": "Oczekująca",
+        "failed": "Nieudana",
+        "draft": "Szkic"
+      }
+    }
+  },
+  "currency": {
+    "showLocalizedPrice": "Pokaż cenę w lokalnej walucie",
+    "showOriginalPrice": "Pokaż oryginalną cenę w PLN",
+    "disclaimer": "Wyświetlana cena to szacunkowa kwota w {{currency}}. Ostateczna kwota może się różnić."
+  },
+  "cookieConsent": {
+    "title": "Pliki cookie",
+    "description": "Używamy niezbędnych plików cookie, aby aplikacja działała poprawnie. Te pliki cookie są konieczne dla podstawowej funkcjonalności.",
+    "byClickingAccept": "Klikając Akceptuj wyrażasz zgodę na użycie tych plików cookie.",
+    "learnMore": "Dowiedz się więcej",
+    "decline": "Odrzuć",
+    "accept": "Akceptuj"
+  },
+  "payment": {
+    "success": {
+      "title": "Płatność Zakończona Pomyślnie"
+    },
+    "cancelled": {
+      "title": "Płatność Anulowana"
+    }
+  }
+}
