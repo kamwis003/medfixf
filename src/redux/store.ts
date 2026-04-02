@@ -8,10 +8,7 @@ const appReducer = combineReducers({
   products: productsReducer,
 })
 
-const rootReducer = (
-  state: ReturnType<typeof appReducer> | undefined,
-  action: UnknownAction,
-) => {
+const rootReducer = (state: ReturnType<typeof appReducer> | undefined, action: UnknownAction) => {
   if (resetApp.match(action)) {
     return (appReducer as any)(undefined, action)
   }
@@ -24,10 +21,7 @@ export const store = configureStore({
 
 store.subscribe(() => {
   try {
-    localStorage.setItem(
-      FERTILITY_STORAGE_KEY,
-      JSON.stringify(store.getState().fertility.entries),
-    )
+    localStorage.setItem(FERTILITY_STORAGE_KEY, JSON.stringify(store.getState().fertility.entries))
   } catch {
     // ignore storage errors
   }

@@ -36,7 +36,7 @@ export const CycleTracking = () => {
           endDate: data.endDate?.toISOString(),
           symptoms: data.symptoms,
           notes: data.notes,
-        }),
+        })
       )
       setEditingEntry(null)
     } else {
@@ -47,7 +47,7 @@ export const CycleTracking = () => {
           endDate: data.endDate?.toISOString(),
           symptoms: data.symptoms,
           notes: data.notes,
-        }),
+        })
       )
     }
     setShowForm(false)
@@ -86,9 +86,7 @@ export const CycleTracking = () => {
       </div>
 
       <Alert>
-        <AlertDescription className="text-sm">
-          ⚠️ {t('fertility.disclaimer')}
-        </AlertDescription>
+        <AlertDescription className="text-sm">⚠️ {t('fertility.disclaimer')}</AlertDescription>
       </Alert>
 
       <div className="grid gap-6 md:grid-cols-3">
@@ -119,7 +117,7 @@ export const CycleTracking = () => {
                   </CardContent>
                 </Card>
               ) : (
-                sortedEntries.map((entry) => (
+                sortedEntries.map(entry => (
                   <Card key={entry.id}>
                     <CardContent className="py-4">
                       <div className="flex items-start justify-between">
@@ -138,7 +136,8 @@ export const CycleTracking = () => {
                             )}
                             {entry.ovulationDate && (
                               <Badge variant="secondary" className="text-xs">
-                                🥚 Owulacja: {format(parseISO(entry.ovulationDate), 'd MMM', { locale: pl })}
+                                🥚 Owulacja:{' '}
+                                {format(parseISO(entry.ovulationDate), 'd MMM', { locale: pl })}
                               </Badge>
                             )}
                           </div>
@@ -191,8 +190,8 @@ export const CycleTracking = () => {
               <div>
                 <p className="font-medium mb-1">Jak rejestrować cykl?</p>
                 <p className="text-muted-foreground">
-                  Zaznacz datę pierwszego dnia menstruacji jako początek cyklu.
-                  Możesz dodać wpis historyczny wybierając dowolną datę w przeszłości.
+                  Zaznacz datę pierwszego dnia menstruacji jako początek cyklu. Możesz dodać wpis
+                  historyczny wybierając dowolną datę w przeszłości.
                 </p>
               </div>
               <div>

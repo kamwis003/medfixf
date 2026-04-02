@@ -8,10 +8,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 import { useTranslation } from 'react-i18next'
-import type {
-Article,
-ListArticleResponse
-} from '@/types/endometriosis'
+import type { Article, ListArticleResponse } from '@/types/endometriosis'
 
 export const EndometriosisInfo: FC = () => {
   const { t } = useTranslation()
@@ -31,7 +28,9 @@ export const EndometriosisInfo: FC = () => {
       setError(null)
       setIsLoading(true)
       try {
-        const res = await apiRequest<ListArticleResponse>('/endometriosis-articles', { method: 'GET' })
+        const res = await apiRequest<ListArticleResponse>('/endometriosis-articles', {
+          method: 'GET',
+        })
         if (!cancelled) setArticles(res.data ?? [])
       } catch (e: unknown) {
         if (!cancelled) {
@@ -56,9 +55,7 @@ export const EndometriosisInfo: FC = () => {
     <div className="flex flex-1 flex-col gap-6 p-4 md:p-6">
       <div className="flex flex-col gap-2">
         <h1 className="text-3xl font-bold">{t('endometriosis.info.title')}</h1>
-        <p className="text-muted-foreground">
-          {t('endometriosis.info.subtitle')}
-        </p>
+        <p className="text-muted-foreground">{t('endometriosis.info.subtitle')}</p>
       </div>
 
       <div className="flex justify-end mb-2">
@@ -91,14 +88,12 @@ export const EndometriosisInfo: FC = () => {
             </CardContent>
           </Card>
         ) : (
-          articles.map((a) => (
+          articles.map(a => (
             <Card key={a.id}>
               <CardHeader>
                 <CardTitle>{a.title}</CardTitle>
                 <div className="text-xs text-muted-foreground mt-1">
-                  {a.author?.name && (
-                    <span className="pr-2">Autor: {a.author.name}</span>
-                  )}
+                  {a.author?.name && <span className="pr-2">Autor: {a.author.name}</span>}
                   {new Date(a.createdAt).toLocaleDateString()}
                 </div>
               </CardHeader>

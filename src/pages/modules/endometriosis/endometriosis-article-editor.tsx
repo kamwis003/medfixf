@@ -31,7 +31,7 @@ export const EndometriosisArticleEditor: FC = () => {
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
-    setForm((p) => ({ ...p, [name]: value }))
+    setForm(p => ({ ...p, [name]: value }))
   }
 
   const onSubmit = async (e: React.FormEvent) => {
@@ -60,7 +60,9 @@ export const EndometriosisArticleEditor: FC = () => {
     <div className="flex flex-1 flex-col items-center gap-6 p-4 md:p-6">
       <Card className="w-full max-w-2xl">
         <CardHeader>
-          <CardTitle className="text-2xl font-bold text-center">{t('endometriosis.info.addarticle')}</CardTitle>
+          <CardTitle className="text-2xl font-bold text-center">
+            {t('endometriosis.info.addarticle')}
+          </CardTitle>
         </CardHeader>
         <CardContent>
           {error && (
@@ -107,11 +109,7 @@ export const EndometriosisArticleEditor: FC = () => {
               >
                 {t('endometriosis.editor.cancel')}
               </Button>
-              <Button
-                type="submit"
-                className="w-2/3"
-                disabled={isSaving}
-              >
+              <Button type="submit" className="w-2/3" disabled={isSaving}>
                 {isSaving ? t('endometriosis.saving') : t('endometriosis.editor.publish')}
               </Button>
             </div>

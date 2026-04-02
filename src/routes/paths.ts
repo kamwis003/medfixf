@@ -40,6 +40,10 @@ export const ROUTES = {
     ROOT: '/modules/patients',
     DETAIL: (id: string) => `/modules/patients/${id}`,
   },
+  REQUESTS: {
+    MY: '/modules/my-requests',
+    CLINIC: '/modules/clinic-requests',
+  },
   // Products routes
   PRODUCTS: {
     ROOT: '/products',

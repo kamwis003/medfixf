@@ -43,7 +43,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         url: ROUTES.PRODUCTS.CATALOG,
         icon: Box,
         collapsedOnly: true,
-      }
+      },
     ]
 
     return [
@@ -61,29 +61,29 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         isActive: true,
         items: [
           {
-        title: t('pages.products.tabs.endometriosis'),
-        url: ROUTES.ENDOMETRIOSIS.INFO,
-        icon: Box,
-        collapsedOnly: true,
-      },
-      {
-        title: t('pages.products.tabs.endometriosis_diary'),
-        url: ROUTES.ENDOMETRIOSIS.DIARY,
-        icon: Box,
-        collapsedOnly: true,
-      },
-      {
-        title: t('pages.products.tabs.endometriosis_visualization'),
-        url: ROUTES.ENDOMETRIOSIS.VISUALIZATION,
-        icon: Box,
-        collapsedOnly: true,
-      },
-      {
-        title: t('endometriosis.advice.title'),
-        url: ROUTES.ENDOMETRIOSIS.ADVICE,
-        icon: Box,
-        collapsedOnly: true,
-      }
+            title: t('pages.products.tabs.endometriosis'),
+            url: ROUTES.ENDOMETRIOSIS.INFO,
+            icon: Box,
+            collapsedOnly: true,
+          },
+          {
+            title: t('pages.products.tabs.endometriosis_diary'),
+            url: ROUTES.ENDOMETRIOSIS.DIARY,
+            icon: Box,
+            collapsedOnly: true,
+          },
+          {
+            title: t('pages.products.tabs.endometriosis_visualization'),
+            url: ROUTES.ENDOMETRIOSIS.VISUALIZATION,
+            icon: Box,
+            collapsedOnly: true,
+          },
+          {
+            title: t('endometriosis.advice.title'),
+            url: ROUTES.ENDOMETRIOSIS.ADVICE,
+            icon: Box,
+            collapsedOnly: true,
+          },
         ],
       },
       {
@@ -93,29 +93,29 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         isActive: true,
         items: [
           {
-        title: t('fertility.calendar.title'),
-        url: ROUTES.FERTILITY.CALENDAR,
-        icon: Box,
-        collapsedOnly: true,
-      },
-      {
-        title: t('fertility.tracking.title'),
-        url: ROUTES.FERTILITY.TRACKING,
-        icon: Box,
-        collapsedOnly: true,
-      },
-      {
-        title: t('fertility.education.title'),
-        url: ROUTES.FERTILITY.EDUCATION,
-        icon: Box,
-        collapsedOnly: true,
-      },
-      {
-        title: t('fertility.consultation.title'),
-        url: ROUTES.FERTILITY.CONSULTATION,
-        icon: Box,
-        collapsedOnly: true,
-      }
+            title: t('fertility.calendar.title'),
+            url: ROUTES.FERTILITY.CALENDAR,
+            icon: Box,
+            collapsedOnly: true,
+          },
+          {
+            title: t('fertility.tracking.title'),
+            url: ROUTES.FERTILITY.TRACKING,
+            icon: Box,
+            collapsedOnly: true,
+          },
+          {
+            title: t('fertility.education.title'),
+            url: ROUTES.FERTILITY.EDUCATION,
+            icon: Box,
+            collapsedOnly: true,
+          },
+          {
+            title: t('fertility.consultation.title'),
+            url: ROUTES.FERTILITY.CONSULTATION,
+            icon: Box,
+            collapsedOnly: true,
+          },
         ],
       },
       {
@@ -123,7 +123,24 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         url: ROUTES.PATIENTS.ROOT,
         icon: Box,
         collapsedOnly: true,
-      }
+      },
+      ...(userData?.role === 'ADMIN'
+        ? [
+            {
+              title: t('consultationRequest.clinic.navTitle'),
+              url: ROUTES.REQUESTS.CLINIC,
+              icon: Box,
+              collapsedOnly: true,
+            },
+          ]
+        : [
+            {
+              title: t('consultationRequest.myRequests.navTitle'),
+              url: ROUTES.REQUESTS.MY,
+              icon: Box,
+              collapsedOnly: true,
+            },
+          ]),
     ]
   }
 

@@ -1,21 +1,16 @@
-import { FC, useEffect, useMemo, useState } from "react";
-import { useDocumentTitle } from "@/hooks/use-document-title";
-import { useAuth } from "@/hooks/use-auth";
-import { apiRequest } from "@/utils/api";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import { FC, useEffect, useMemo, useState } from 'react'
+import { useDocumentTitle } from '@/hooks/use-document-title'
+import { useAuth } from '@/hooks/use-auth'
+import { apiRequest } from '@/utils/api'
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Alert, AlertDescription } from '@/components/ui/alert'
 import { useTranslation } from 'react-i18next'
 import type {
-DiaryEntry,
-DiaryEntryForm,
-ListDiaryResponse,
-CreateDiaryResponse
+  DiaryEntry,
+  DiaryEntryForm,
+  ListDiaryResponse,
+  CreateDiaryResponse,
 } from '@/types/endometriosis'
 
 const initialForm: DiaryEntryForm = {
@@ -31,97 +26,96 @@ const initialForm: DiaryEntryForm = {
 }
 
 export const EndometriosisDiary: FC = () => {
-  const { t } = useTranslation();
-  useDocumentTitle(t('pages.products.tabs.endometriosis_diary'));
+  const { t } = useTranslation()
+  useDocumentTitle(t('pages.products.tabs.endometriosis_diary'))
 
-  const { user } = useAuth();
+  const { user } = useAuth()
 
-  const [entries, setEntries] = useState<DiaryEntry[]>([]);
-  const [isLoadingEntries, setIsLoadingEntries] = useState(false);
-  const [isSaving, setIsSaving] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [entries, setEntries] = useState<DiaryEntry[]>([])
+  const [isLoadingEntries, setIsLoadingEntries] = useState(false)
+  const [isSaving, setIsSaving] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  const [form, setForm] = useState<DiaryEntryForm>(initialForm);
+  const [form, setForm] = useState<DiaryEntryForm>(initialForm)
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value, type, checked } = e.target;
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value, type, checked } = e.target
 
-    if (name === "hadSurgeryLast6Months" && !checked) {
-      setForm((prev) => ({
+    if (name === 'hadSurgeryLast6Months' && !checked) {
+      setForm(prev => ({
         ...prev,
         [name]: false,
-        surgeryDescription: "",
-      }));
-      return;
+        surgeryDescription: '',
+      }))
+      return
     }
 
-    setForm((prev) => ({
+    setForm(prev => ({
       ...prev,
       [name]:
-        type === "checkbox"
+        type === 'checkbox'
           ? checked
-          : name === "painLevel" || name === "cycleDay"
-          ? value === "" ? "" : Number(value)
-          : value,
-    }));
-  };
-
-  useEffect(() => {
-  setError(null);
-
-  if (!user) {
-    setEntries([]);
-    return;
+          : name === 'painLevel' || name === 'cycleDay'
+            ? value === ''
+              ? ''
+              : Number(value)
+            : value,
+    }))
   }
 
-  setIsLoadingEntries(true);
+  useEffect(() => {
+    setError(null)
 
-  (async () => {
-    try {
-      const res = await apiRequest<ListDiaryResponse>("/diary-entries", {
-        method: "GET",
-      });
-      setEntries(res.data);
-    } catch (e: unknown) {
-      if (e instanceof Error) {
-        setError(e.message);
-      } else {
-        setError("Nie udało się pobrać wpisów.");
-      }
-    } finally {
-      setIsLoadingEntries(false);
+    if (!user) {
+      setEntries([])
+      return
     }
-  })();
-}, [user?.id]);
+
+    setIsLoadingEntries(true)
+    ;(async () => {
+      try {
+        const res = await apiRequest<ListDiaryResponse>('/diary-entries', {
+          method: 'GET',
+        })
+        setEntries(res.data)
+      } catch (e: unknown) {
+        if (e instanceof Error) {
+          setError(e.message)
+        } else {
+          setError('Nie udało się pobrać wpisów.')
+        }
+      } finally {
+        setIsLoadingEntries(false)
+      }
+    })()
+  }, [user?.id])
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError(null);
-    setIsSaving(true);
+    e.preventDefault()
+    setError(null)
+    setIsSaving(true)
     try {
       const payload = {
         ...form,
-        surgeryDescription: form.hadSurgeryLast6Months ? form.surgeryDescription : "",
-        cycleDay: form.cycleDay === "" ? undefined : form.cycleDay,
-      };
-      const res = await apiRequest<CreateDiaryResponse>("/diary-entries", {
-        method: "POST",
+        surgeryDescription: form.hadSurgeryLast6Months ? form.surgeryDescription : '',
+        cycleDay: form.cycleDay === '' ? undefined : form.cycleDay,
+      }
+      const res = await apiRequest<CreateDiaryResponse>('/diary-entries', {
+        method: 'POST',
         body: JSON.stringify(payload),
-      });
+      })
 
-      setEntries((prev) => [res.data, ...prev]);
-      setForm(initialForm);
-      setIsSaving(false);
+      setEntries(prev => [res.data, ...prev])
+      setForm(initialForm)
+      setIsSaving(false)
     } catch (e: unknown) {
-      if(e instanceof Error)
-      {setError(e.message)
-    } else {
-      setError("Nie udało się załadować wpisów");
+      if (e instanceof Error) {
+        setError(e.message)
+      } else {
+        setError('Nie udało się załadować wpisów')
+      }
     }
   }
-  };
 
   return (
     <div className="flex flex-1 flex-col gap-6 p-4 md:p-6">
@@ -142,11 +136,7 @@ export const EndometriosisDiary: FC = () => {
             </Alert>
           )}
 
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-6"
-            autoComplete="off"
-          >
+          <form onSubmit={handleSubmit} className="space-y-6" autoComplete="off">
             <div>
               <label className="block font-medium mb-1">{t('endometriosis.diary.date')}</label>
               <input
@@ -186,9 +176,7 @@ export const EndometriosisDiary: FC = () => {
                 onChange={handleChange}
                 className="w-full"
               />
-              <div className="text-center mt-2 font-semibold text-lg">
-                {form.painLevel}
-              </div>
+              <div className="text-center mt-2 font-semibold text-lg">{form.painLevel}</div>
             </div>
 
             <div>
@@ -206,9 +194,7 @@ export const EndometriosisDiary: FC = () => {
             </div>
 
             <div>
-              <label className="block font-medium mb-1">
-                {t('endometriosis.diary.symptoms')}
-              </label>
+              <label className="block font-medium mb-1">{t('endometriosis.diary.symptoms')}</label>
               <textarea
                 name="symptoms"
                 placeholder={t('endometriosis.diary.symptoms_examples')}
@@ -273,11 +259,7 @@ export const EndometriosisDiary: FC = () => {
               </label>
             </div>
 
-            <Button
-              type="submit"
-              className="w-full"
-              disabled={!user || isSaving}
-            >
+            <Button type="submit" className="w-full" disabled={!user || isSaving}>
               {isSaving ? t('endometriosis.saving') : t('endometriosis.diary.saveentry')}
             </Button>
           </form>
@@ -302,32 +284,35 @@ export const EndometriosisDiary: FC = () => {
             </div>
           ) : (
             <div className="space-y-4">
-              {entries.map((entry) => (
-                <Card
-                  key={entry.id}
-                  className="shadow-none border bg-card text-card-foreground"
-                >
+              {entries.map(entry => (
+                <Card key={entry.id} className="shadow-none border bg-card text-card-foreground">
                   <CardContent className="p-4">
                     <div className="flex flex-wrap gap-3 items-baseline mb-1">
                       <span className="font-semibold">
-                        {t('endometriosis.diary.date')}: {new Date(entry.date).toISOString().split("T")[0]}
+                        {t('endometriosis.diary.date')}:{' '}
+                        {new Date(entry.date).toISOString().split('T')[0]}
                       </span>
-                      {"cycleDay" in entry &&
-                        typeof entry.cycleDay === "number" && (
-                          <span>{t('endometriosis.diary.cycleday')}: {entry.cycleDay}</span>
-                        )}
-                      <span>{t('endometriosis.diary.painlevel')}: {entry.painLevel}/10</span>
+                      {'cycleDay' in entry && typeof entry.cycleDay === 'number' && (
+                        <span>
+                          {t('endometriosis.diary.cycleday')}: {entry.cycleDay}
+                        </span>
+                      )}
+                      <span>
+                        {t('endometriosis.diary.painlevel')}: {entry.painLevel}/10
+                      </span>
                     </div>
-                    <div>{t('endometriosis.diary.painlocation')}: {entry.painLocation}</div>
-                    <div>{t('endometriosis.diary.symptoms')}: {entry.symptoms}</div>
+                    <div>
+                      {t('endometriosis.diary.painlocation')}: {entry.painLocation}
+                    </div>
+                    <div>
+                      {t('endometriosis.diary.symptoms')}: {entry.symptoms}
+                    </div>
 
                     <div className="mt-2 text-xs text-muted-foreground space-y-1">
                       {entry.hadSurgeryLast6Months && (
                         <div>
                           ✔ {t('endometriosis.diary.last6months.surgicalprocedure')}
-                          {entry.surgeryDescription ? (
-                            <> – {entry.surgeryDescription}</>
-                          ) : null}
+                          {entry.surgeryDescription ? <> – {entry.surgeryDescription}</> : null}
                         </div>
                       )}
                       {entry.hormonalTreatment && (
@@ -345,5 +330,5 @@ export const EndometriosisDiary: FC = () => {
         </CardContent>
       </Card>
     </div>
-  );
-};
+  )
+}

@@ -14,6 +14,8 @@ import type { SpecialistType } from '@/types/fertility'
 import { UserPlus, Stethoscope, Heart, Activity, Star, type LucideIcon } from 'lucide-react'
 import { mockDoctors } from '@/data/mock-specialists'
 import { cn } from '@/lib/utils'
+import { apiRequest } from '@/utils/api'
+import type { ICreateConsultationRequest } from '@/types/consultation'
 
 export const ConsultationRequest = () => {
   const { t } = useTranslation()
@@ -24,26 +26,32 @@ export const ConsultationRequest = () => {
   const [selectedDoctorId, setSelectedDoctorId] = useState<string | null>(null)
   const [description, setDescription] = useState('')
   const [consentGiven, setConsentGiven] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const specialists: { type: SpecialistType; label: string; description: string; icon: LucideIcon }[] = [
+  const specialists: {
+    type: SpecialistType
+    label: string
+    description: string
+    icon: LucideIcon
+  }[] = [
     {
       type: 'gynecologist',
       label: 'Ginekolog',
       description: 'Specjalista chorób narządów płciowych kobiety',
-      icon: Stethoscope
+      icon: Stethoscope,
     },
     {
       type: 'fertility_specialist',
       label: 'Specjalista ds. płodności',
       description: 'Lekarz zajmujący się problemami z płodnością i prokreacją',
-      icon: Heart
+      icon: Heart,
     },
     {
       type: 'endocrinologist',
       label: 'Endokrynolog',
       description: 'Specjalista od hormonów i zaburzeń gospodarki hormonalnej',
-      icon: Activity
-    }
+      icon: Activity,
+    },
   ]
 
   const handleSpecialistTypeChange = (value: string) => {
@@ -51,34 +59,48 @@ export const ConsultationRequest = () => {
     setSelectedDoctorId(null)
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     if (!consentGiven) {
       toast({
-        title: 'Błąd',
-        description: 'Musisz wyrazić zgodę na przetwarzanie danych',
-        variant: 'destructive'
+        title: t('consultationRequest.errors.consentRequired'),
+        description: t('consultationRequest.errors.consentRequiredDescription'),
+        variant: 'destructive',
       })
       return
     }
 
-    console.log('Consultation request:', {
-      specialistType,
-      description,
-      consentGiven
-    })
+    setIsSubmitting(true)
+    try {
+      const payload: ICreateConsultationRequest = {
+        specialistType,
+        doctorId: selectedDoctorId ?? undefined,
+        description: description.trim() || undefined,
+        consentGiven,
+      }
+      await apiRequest('/consultation-requests', {
+        method: 'POST',
+        body: JSON.stringify(payload),
+      })
 
-    // TODO: Send to backend
+      toast({
+        title: t('consultationRequest.success.title'),
+        description: t('consultationRequest.success.description'),
+      })
 
-    toast({
-      title: 'Zgłoszenie wysłane',
-      description: 'Twoje zgłoszenie zostało przekazane. Skontaktujemy się z Tobą wkrótce.',
-    })
-
-    // Reset form
-    setDescription('')
-    setConsentGiven(false)
+      setDescription('')
+      setConsentGiven(false)
+      setSelectedDoctorId(null)
+    } catch (error) {
+      toast({
+        title: t('consultationRequest.errors.submitFailed'),
+        description: error instanceof Error ? error.message : t('errors.unknownError'),
+        variant: 'destructive',
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -89,9 +111,7 @@ export const ConsultationRequest = () => {
       </div>
 
       <Alert>
-        <AlertDescription className="text-sm">
-          ⚠️ {t('fertility.disclaimer')}
-        </AlertDescription>
+        <AlertDescription className="text-sm">⚠️ {t('fertility.disclaimer')}</AlertDescription>
       </Alert>
 
       <div className="grid gap-6 md:grid-cols-3">
@@ -106,13 +126,23 @@ export const ConsultationRequest = () => {
               </CardHeader>
               <CardContent>
                 <RadioGroup value={specialistType} onValueChange={handleSpecialistTypeChange}>
-                  {specialists.map((specialist) => {
+                  {specialists.map(specialist => {
                     const Icon = specialist.icon
                     return (
-                      <div key={specialist.type} className="flex items-start space-x-3 p-4 rounded-lg border hover:bg-accent cursor-pointer">
-                        <RadioGroupItem value={specialist.type} id={specialist.type} className="mt-1" />
+                      <div
+                        key={specialist.type}
+                        className="flex items-start space-x-3 p-4 rounded-lg border hover:bg-accent cursor-pointer"
+                      >
+                        <RadioGroupItem
+                          value={specialist.type}
+                          id={specialist.type}
+                          className="mt-1"
+                        />
                         <div className="flex-1">
-                          <Label htmlFor={specialist.type} className="flex items-center gap-2 font-medium cursor-pointer">
+                          <Label
+                            htmlFor={specialist.type}
+                            className="flex items-center gap-2 font-medium cursor-pointer"
+                          >
                             <Icon className="h-4 w-4" />
                             {specialist.label}
                           </Label>
@@ -130,19 +160,18 @@ export const ConsultationRequest = () => {
             <Card>
               <CardHeader>
                 <CardTitle>Dostępni specjaliści</CardTitle>
-                <CardDescription>
-                  Wybierz lekarza, z którym chcesz się skonsultować
-                </CardDescription>
+                <CardDescription>Wybierz lekarza, z którym chcesz się skonsultować</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
-                {(mockDoctors[specialistType] ?? []).map((doctor) => (
+                {(mockDoctors[specialistType] ?? []).map(doctor => (
                   <button
                     key={doctor.id}
                     type="button"
                     onClick={() => setSelectedDoctorId(doctor.id)}
                     className={cn(
                       'w-full flex items-start gap-4 p-4 rounded-lg border text-left transition-colors hover:bg-accent',
-                      selectedDoctorId === doctor.id && 'border-primary ring-2 ring-primary bg-accent'
+                      selectedDoctorId === doctor.id &&
+                        'border-primary ring-2 ring-primary bg-accent'
                     )}
                   >
                     <img
@@ -156,12 +185,17 @@ export const ConsultationRequest = () => {
                         <span className="font-medium text-sm">{doctor.name}</span>
                         {doctor.isRecommended && (
                           <Badge variant="secondary" className="flex items-center gap-1 text-xs">
-                            <Star className="h-3 w-3 fill-yellow-400 text-yellow-400" aria-hidden="true" />
+                            <Star
+                              className="h-3 w-3 fill-yellow-400 text-yellow-400"
+                              aria-hidden="true"
+                            />
                             Polecany
                           </Badge>
                         )}
                       </div>
-                      <p className="text-xs text-muted-foreground mt-0.5">{doctor.specialization}</p>
+                      <p className="text-xs text-muted-foreground mt-0.5">
+                        {doctor.specialization}
+                      </p>
                       <p className="text-sm text-muted-foreground mt-1">{doctor.description}</p>
                     </div>
                   </button>
@@ -179,7 +213,7 @@ export const ConsultationRequest = () => {
               <CardContent>
                 <Textarea
                   value={description}
-                  onChange={(e) => setDescription(e.target.value)}
+                  onChange={e => setDescription(e.target.value)}
                   placeholder="Np. nieregularny cykl, ból podczas menstruacji, trudności z zajściem w ciążę..."
                   rows={6}
                   className="resize-none"
@@ -199,15 +233,15 @@ export const ConsultationRequest = () => {
                   <Checkbox
                     id="consent"
                     checked={consentGiven}
-                    onCheckedChange={(checked) => setConsentGiven(checked as boolean)}
+                    onCheckedChange={checked => setConsentGiven(checked as boolean)}
                   />
                   <div className="flex-1">
                     <Label htmlFor="consent" className="text-sm font-normal cursor-pointer">
-                      Wyrażam zgodę na przetwarzanie moich danych osobowych oraz danych o stanie zdrowia 
-                      w celu umówienia konsultacji ze specjalistą. *
+                      Wyrażam zgodę na przetwarzanie moich danych osobowych oraz danych o stanie
+                      zdrowia w celu umówienia konsultacji ze specjalistą. *
                     </Label>
                     <p className="text-xs text-muted-foreground mt-2">
-                      Zgodnie z RODO masz prawo do wglądu, poprawiania i usunięcia swoich danych. 
+                      Zgodnie z RODO masz prawo do wglądu, poprawiania i usunięcia swoich danych.
                       Twoje dane będą wykorzystane wyłącznie w celu organizacji konsultacji.
                     </p>
                   </div>
@@ -215,16 +249,22 @@ export const ConsultationRequest = () => {
 
                 <Alert>
                   <AlertDescription className="text-xs">
-                    Ta aplikacja nie oferuje bezpośrednich konsultacji medycznych. Twoje zgłoszenie zostanie 
-                    przekazane do partnera medycznego, który skontaktuje się z Tobą w celu umówienia wizyty.
+                    Ta aplikacja nie oferuje bezpośrednich konsultacji medycznych. Twoje zgłoszenie
+                    zostanie przekazane do partnera medycznego, który skontaktuje się z Tobą w celu
+                    umówienia wizyty.
                   </AlertDescription>
                 </Alert>
               </CardContent>
             </Card>
 
-            <Button type="submit" className="w-full" size="lg" disabled={!consentGiven}>
+            <Button
+              type="submit"
+              className="w-full"
+              size="lg"
+              disabled={!consentGiven || isSubmitting}
+            >
               <UserPlus className="mr-2 h-5 w-5" />
-              Wyślij zgłoszenie konsultacji
+              {isSubmitting ? t('consultationRequest.submitting') : t('consultationRequest.submit')}
             </Button>
           </form>
         </div>
@@ -268,12 +308,10 @@ export const ConsultationRequest = () => {
             </CardHeader>
             <CardContent className="text-sm text-muted-foreground">
               <p>
-                W przypadku nagłych dolegliwości (silny ból, krwawienie, gorączka) 
-                nie czekaj na konsultację - udaj się do lekarza lub na izbę przyjęć.
+                W przypadku nagłych dolegliwości (silny ból, krwawienie, gorączka) nie czekaj na
+                konsultację - udaj się do lekarza lub na izbę przyjęć.
               </p>
-              <p className="mt-3 font-medium text-foreground">
-                Numer alarmowy: 112
-              </p>
+              <p className="mt-3 font-medium text-foreground">Numer alarmowy: 112</p>
             </CardContent>
           </Card>
         </div>

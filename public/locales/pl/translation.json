@@ -387,8 +387,8 @@
       "errorPatient": "Nie udało się pobrać danych pacjenta.",
       "errorEntries": "Nie udało się pobrać wpisów dziennika.",
       "filter": {
-      "dateRange": "Zakres danych",
-      "clear": "Pokaż wszystko"
+        "dateRange": "Zakres danych",
+        "clear": "Pokaż wszystko"
       },
       "tabs": {
         "visualization": "Wizualizacja",
@@ -646,6 +646,52 @@
     },
     "cancelled": {
       "title": "Płatność Anulowana"
+    }
+  },
+  "consultationRequest": {
+    "submit": "Wyślij zgłoszenie konsultacji",
+    "submitting": "Wysyłanie...",
+    "success": {
+      "title": "Zgłoszenie wysłane",
+      "description": "Twoje zgłoszenie zostało przekazane do kliniki. Skontaktujemy się z Tobą wkrótce."
+    },
+    "errors": {
+      "consentRequired": "Wymagana zgoda",
+      "consentRequiredDescription": "Musisz wyrazić zgodę na przetwarzanie danych medycznych.",
+      "submitFailed": "Błąd wysyłania zgłoszenia"
+    },
+    "specialists": {
+      "gynecologist": "Ginekolog",
+      "fertilitySpecialist": "Specjalista ds. płodności",
+      "endocrinologist": "Endokrynolog"
+    },
+    "status": {
+      "pending": "Oczekuje",
+      "accepted": "Zaakceptowane",
+      "rejected": "Odrzucone"
+    },
+    "myRequests": {
+      "navTitle": "Moje zgłoszenia",
+      "title": "Moje zgłoszenia",
+      "description": "Lista Twoich zgłoszeń do kliniki.",
+      "empty": "Nie masz jeszcze żadnych zgłoszeń.",
+      "sentAt": "Wysłano",
+      "rejectedReason": "Powód odrzucenia"
+    },
+    "clinic": {
+      "navTitle": "Zgłoszenia pacjentów",
+      "title": "Zgłoszenia pacjentów",
+      "description": "Lista zgłoszeń od pacjentów. Możesz je zaakceptować lub odrzucić.",
+      "empty": "Brak zgłoszeń.",
+      "specialist": "Specjalista",
+      "sentAt": "Data zgłoszenia",
+      "accept": "Akceptuj",
+      "reject": "Odrzuć",
+      "confirmReject": "Potwierdź odrzucenie",
+      "cancelReject": "Anuluj",
+      "rejectReason": "Powód odrzucenia (opcjonalnie)",
+      "rejectReasonPlaceholder": "Podaj powód odrzucenia...",
+      "rejectedReason": "Powód odrzucenia"
     }
   }
 }

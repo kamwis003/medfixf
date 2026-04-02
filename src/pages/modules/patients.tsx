@@ -51,7 +51,7 @@ export const PatientsPage: React.FC = () => {
             </Alert>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {patients.map((p) => (
+              {patients.map(p => (
                 <button
                   key={p.id}
                   type="button"

@@ -6,12 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 import {
   addDays,
   addMonths,
@@ -105,10 +100,7 @@ function calculateStats(entries: ICycleEntryRedux[]) {
 
   const lengths: number[] = []
   for (let i = 1; i < entries.length; i++) {
-    const len = differenceInDays(
-      parseISO(entries[i].startDate),
-      parseISO(entries[i - 1].startDate),
-    )
+    const len = differenceInDays(parseISO(entries[i].startDate), parseISO(entries[i - 1].startDate))
     if (len > 0) lengths.push(len)
   }
 
@@ -143,18 +135,15 @@ function calculateStats(entries: ICycleEntryRedux[]) {
 
   // Ovulation stats: day of ovulation relative to cycle start
   const ovulationDays: number[] = entries
-    .filter((e) => e.ovulationDate)
-    .map((e) => differenceInDays(parseISO(e.ovulationDate!), parseISO(e.startDate)))
+    .filter(e => e.ovulationDate)
+    .map(e => differenceInDays(parseISO(e.ovulationDate!), parseISO(e.startDate)))
 
   let ovulationAvgDay: number | null = null
   let ovulationStdDev: number | null = null
   if (ovulationDays.length >= 2) {
-    ovulationAvgDay = Math.round(
-      ovulationDays.reduce((a, b) => a + b, 0) / ovulationDays.length,
-    )
+    ovulationAvgDay = Math.round(ovulationDays.reduce((a, b) => a + b, 0) / ovulationDays.length)
     const ovVar =
-      ovulationDays.reduce((acc, d) => acc + (d - ovulationAvgDay!) ** 2, 0) /
-      ovulationDays.length
+      ovulationDays.reduce((acc, d) => acc + (d - ovulationAvgDay!) ** 2, 0) / ovulationDays.length
     ovulationStdDev = Math.round(Math.sqrt(ovVar) * 10) / 10
   }
 
@@ -173,10 +162,7 @@ function predictNextCycleStart(entries: ICycleEntryRedux[]): Date | null {
   const last = entries[entries.length - 1]
   const lengths: number[] = []
   for (let i = 1; i < entries.length; i++) {
-    const len = differenceInDays(
-      parseISO(entries[i].startDate),
-      parseISO(entries[i - 1].startDate),
-    )
+    const len = differenceInDays(parseISO(entries[i].startDate), parseISO(entries[i - 1].startDate))
     if (len > 0) lengths.push(len)
   }
   if (lengths.length === 0) return null
@@ -197,8 +183,7 @@ const CycleDayTooltip = ({ info, entries, predicted }: ICycleTooltipProps) => {
   const start = parseISO(entry.startDate)
   const end = entry.endDate ? parseISO(entry.endDate) : null
 
-  const nextPredicted =
-    predicted && entries[entries.length - 1]?.id === entry.id ? predicted : null
+  const nextPredicted = predicted && entries[entries.length - 1]?.id === entry.id ? predicted : null
 
   return (
     <div className="space-y-1 text-xs">
@@ -241,13 +226,7 @@ interface ICalendarGridProps {
   onDayClick: (date: Date, info: ICycleDayInfo | undefined) => void
 }
 
-const CalendarGrid = ({
-  month,
-  dayMap,
-  entries,
-  predicted,
-  onDayClick,
-}: ICalendarGridProps) => {
+const CalendarGrid = ({ month, dayMap, entries, predicted, onDayClick }: ICalendarGridProps) => {
   const start = startOfWeek(startOfMonth(month), { weekStartsOn: 1 })
   const end = endOfWeek(endOfMonth(month), { weekStartsOn: 1 })
   const days = eachDayOfInterval({ start, end })
@@ -256,11 +235,8 @@ const CalendarGrid = ({
     <div className="w-full">
       {/* Weekday headers */}
       <div className="grid grid-cols-7 mb-1">
-        {WEEKDAYS.map((wd) => (
-          <div
-            key={wd}
-            className="text-center text-xs font-medium text-muted-foreground py-2"
-          >
+        {WEEKDAYS.map(wd => (
+          <div key={wd} className="text-center text-xs font-medium text-muted-foreground py-2">
             {wd}
           </div>
         ))}
@@ -268,7 +244,7 @@ const CalendarGrid = ({
 
       {/* Day cells */}
       <div className="grid grid-cols-7 gap-y-1">
-        {days.map((day) => {
+        {days.map(day => {
           const key = toDateStr(day)
           const info = dayMap.get(key)
           const inCurrentMonth = isSameMonth(day, month)
@@ -361,19 +337,18 @@ export const CycleCalendar = () => {
     if (!info) return
     const entry = info.cycleEntry
     const ovulationDateISO = date.toISOString()
-    const isAlreadyOvulation =
-      entry.ovulationDate && isSameDay(parseISO(entry.ovulationDate), date)
+    const isAlreadyOvulation = entry.ovulationDate && isSameDay(parseISO(entry.ovulationDate), date)
 
     dispatch(
       setOvulationDate({
         entryId: entry.id,
         date: isAlreadyOvulation ? undefined : ovulationDateISO,
-      }),
+      })
     )
   }
 
-  const prevMonth = () => setCurrentMonth((m) => addMonths(m, -1))
-  const nextMonth = () => setCurrentMonth((m) => addMonths(m, 1))
+  const prevMonth = () => setCurrentMonth(m => addMonths(m, -1))
+  const nextMonth = () => setCurrentMonth(m => addMonths(m, 1))
 
   return (
     <div className="flex flex-1 flex-col gap-6 p-4 md:p-6">
@@ -383,9 +358,7 @@ export const CycleCalendar = () => {
       </div>
 
       <Alert>
-        <AlertDescription className="text-sm">
-          ⚠️ {t('fertility.disclaimer')}
-        </AlertDescription>
+        <AlertDescription className="text-sm">⚠️ {t('fertility.disclaimer')}</AlertDescription>
       </Alert>
 
       <div className="grid gap-6 lg:grid-cols-3">
@@ -501,9 +474,7 @@ export const CycleCalendar = () => {
                   {stats.ovulationAvgDay !== null && (
                     <div>
                       <p className="text-sm text-muted-foreground mb-1">Owulacja (średnio)</p>
-                      <p className="text-xl font-semibold">
-                        {stats.ovulationAvgDay}. dzień cyklu
-                      </p>
+                      <p className="text-xl font-semibold">{stats.ovulationAvgDay}. dzień cyklu</p>
                       {stats.ovulationStdDev !== null && (
                         <p className="text-xs text-muted-foreground mt-0.5">
                           Odchylenie: ±{stats.ovulationStdDev} dni
