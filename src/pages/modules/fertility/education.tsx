@@ -89,9 +89,7 @@ export const FertilityEducation = () => {
       </div>
 
       <Alert>
-        <AlertDescription className="text-sm">
-          ⚠️ {t('fertility.disclaimer')}
-        </AlertDescription>
+        <AlertDescription className="text-sm">⚠️ {t('fertility.disclaimer')}</AlertDescription>
       </Alert>
 
       <Tabs defaultValue="cycle" className="w-full">
@@ -116,22 +114,33 @@ export const FertilityEducation = () => {
               <Card>
                 <CardHeader>
                   <CardTitle>Czym jest cykl menstruacyjny?</CardTitle>
-                  <CardDescription>
-                    Podstawowe informacje o cyklu menstruacyjnym
-                  </CardDescription>
+                  <CardDescription>Podstawowe informacje o cyklu menstruacyjnym</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4 text-sm">
                   <p>
-                    Cykl menstruacyjny to naturalny, cykliczny proces zachodzący w organizmie kobiety w wieku rozrodczym. 
-                    Trwa zazwyczaj od 21 do 35 dni, przy czym najczęstsza długość to około 28 dni.
+                    Cykl menstruacyjny to naturalny, cykliczny proces zachodzący w organizmie
+                    kobiety w wieku rozrodczym. Trwa zazwyczaj od 21 do 35 dni, przy czym
+                    najczęstsza długość to około 28 dni.
                   </p>
                   <div>
                     <h4 className="font-semibold mb-2">Fazy cyklu:</h4>
                     <ol className="list-decimal list-inside space-y-2 text-muted-foreground">
-                      <li><strong>Faza menstruacyjna (1-5 dzień)</strong> - Krwawienie menstruacyjne, złuszczanie błony śluzowej macicy</li>
-                      <li><strong>Faza folikularna (6-13 dzień)</strong> - Dojrzewanie pęcherzyka jajnikowego, wzrost poziomu estrogenu</li>
-                      <li><strong>Owulacja (około 14 dzień)</strong> - Uwolnienie komórki jajowej z jajnika</li>
-                      <li><strong>Faza lutealna (15-28 dzień)</strong> - Przygotowanie macicy do ewentualnej implantacji zarodka</li>
+                      <li>
+                        <strong>Faza menstruacyjna (1-5 dzień)</strong> - Krwawienie menstruacyjne,
+                        złuszczanie błony śluzowej macicy
+                      </li>
+                      <li>
+                        <strong>Faza folikularna (6-13 dzień)</strong> - Dojrzewanie pęcherzyka
+                        jajnikowego, wzrost poziomu estrogenu
+                      </li>
+                      <li>
+                        <strong>Owulacja (około 14 dzień)</strong> - Uwolnienie komórki jajowej z
+                        jajnika
+                      </li>
+                      <li>
+                        <strong>Faza lutealna (15-28 dzień)</strong> - Przygotowanie macicy do
+                        ewentualnej implantacji zarodka
+                      </li>
                     </ol>
                   </div>
                 </CardContent>
@@ -144,19 +153,27 @@ export const FertilityEducation = () => {
                 <CardContent className="space-y-3 text-sm">
                   <div>
                     <p className="font-medium mb-1">Faza menstruacyjna:</p>
-                    <p className="text-muted-foreground">Bóle brzucha, zmęczenie, bóle głowy, wahania nastroju</p>
+                    <p className="text-muted-foreground">
+                      Bóle brzucha, zmęczenie, bóle głowy, wahania nastroju
+                    </p>
                   </div>
                   <div>
                     <p className="font-medium mb-1">Faza folikularna:</p>
-                    <p className="text-muted-foreground">Większa energia, lepsze samopoczucie, wzmożona aktywność</p>
+                    <p className="text-muted-foreground">
+                      Większa energia, lepsze samopoczucie, wzmożona aktywność
+                    </p>
                   </div>
                   <div>
                     <p className="font-medium mb-1">Owulacja:</p>
-                    <p className="text-muted-foreground">Wzrost libido, delikatny ból po jednej stronie brzucha</p>
+                    <p className="text-muted-foreground">
+                      Wzrost libido, delikatny ból po jednej stronie brzucha
+                    </p>
                   </div>
                   <div>
                     <p className="font-medium mb-1">Faza lutealna:</p>
-                    <p className="text-muted-foreground">Wzdęcia, wrażliwość piersi, zmiany nastroju, zmęczenie</p>
+                    <p className="text-muted-foreground">
+                      Wzdęcia, wrażliwość piersi, zmiany nastroju, zmęczenie
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -174,21 +191,20 @@ export const FertilityEducation = () => {
               <Card>
                 <CardHeader>
                   <CardTitle>Podstawy płodności</CardTitle>
-                  <CardDescription>
-                    Informacje edukacyjne o płodności kobiet
-                  </CardDescription>
+                  <CardDescription>Informacje edukacyjne o płodności kobiet</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4 text-sm">
                   <p>
-                    Płodność to zdolność do zajścia w ciążę. U kobiet jest ona ściśle związana z cyklem menstruacyjnym 
-                    i procesem owulacji.
+                    Płodność to zdolność do zajścia w ciążę. U kobiet jest ona ściśle związana z
+                    cyklem menstruacyjnym i procesem owulacji.
                   </p>
                   <div>
                     <h4 className="font-semibold mb-2">Okno płodności:</h4>
                     <p className="text-muted-foreground">
-                      Najwyższa płodność występuje w tzw. "oknie płodności", które obejmuje 5-6 dni w cyklu: 
-                      5 dni przed owulacją i dzień owulacji. Plemniki mogą przetrwać w organizmie kobiety do 5 dni, 
-                      podczas gdy komórka jajowa jest zdolna do zapłodnienia przez około 24 godziny.
+                      Najwyższa płodność występuje w tzw. "oknie płodności", które obejmuje 5-6 dni
+                      w cyklu: 5 dni przed owulacją i dzień owulacji. Plemniki mogą przetrwać w
+                      organizmie kobiety do 5 dni, podczas gdy komórka jajowa jest zdolna do
+                      zapłodnienia przez około 24 godziny.
                     </p>
                   </div>
                   <div>
@@ -207,8 +223,9 @@ export const FertilityEducation = () => {
 
               <Alert>
                 <AlertDescription>
-                  <strong>Ważne:</strong> Informacje zawarte w tej sekcji mają charakter wyłącznie edukacyjny. 
-                  Jeśli masz trudności z zajściem w ciążę, skonsultuj się ze specjalistą.
+                  <strong>Ważne:</strong> Informacje zawarte w tej sekcji mają charakter wyłącznie
+                  edukacyjny. Jeśli masz trudności z zajściem w ciążę, skonsultuj się ze
+                  specjalistą.
                 </AlertDescription>
               </Alert>
             </div>
@@ -225,26 +242,40 @@ export const FertilityEducation = () => {
               <Card>
                 <CardHeader>
                   <CardTitle>Planowanie ciąży</CardTitle>
-                  <CardDescription>
-                    Informacje dla kobiet planujących ciążę
-                  </CardDescription>
+                  <CardDescription>Informacje dla kobiet planujących ciążę</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4 text-sm">
                   <div>
                     <h4 className="font-semibold mb-2">Przygotowanie do ciąży:</h4>
                     <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                      <li><strong>Kwas foliowy</strong> - Zalecana suplementacja (min. 400 µg dziennie) na 3 miesiące przed planowaną ciążą</li>
-                      <li><strong>Badania kontrolne</strong> - Konsultacja z ginekologiem, badania tarczycy, morfologia, poziom witaminy D</li>
-                      <li><strong>Zdrowy styl życia</strong> - Zbilansowana dieta, regularna aktywność fizyczna, odpowiednia waga</li>
-                      <li><strong>Unikanie używek</strong> - Alkohol, papierosy, narkotyki negatywnie wpływają na płodność i rozwój płodu</li>
-                      <li><strong>Szczepienia</strong> - Sprawdzenie odporności na różyczkę i inne choroby</li>
+                      <li>
+                        <strong>Kwas foliowy</strong> - Zalecana suplementacja (min. 400 µg
+                        dziennie) na 3 miesiące przed planowaną ciążą
+                      </li>
+                      <li>
+                        <strong>Badania kontrolne</strong> - Konsultacja z ginekologiem, badania
+                        tarczycy, morfologia, poziom witaminy D
+                      </li>
+                      <li>
+                        <strong>Zdrowy styl życia</strong> - Zbilansowana dieta, regularna aktywność
+                        fizyczna, odpowiednia waga
+                      </li>
+                      <li>
+                        <strong>Unikanie używek</strong> - Alkohol, papierosy, narkotyki negatywnie
+                        wpływają na płodność i rozwój płodu
+                      </li>
+                      <li>
+                        <strong>Szczepienia</strong> - Sprawdzenie odporności na różyczkę i inne
+                        choroby
+                      </li>
                     </ul>
                   </div>
 
                   <div>
                     <h4 className="font-semibold mb-2">Śledzenie cyklu:</h4>
                     <p className="text-muted-foreground">
-                      Regularne obserwowanie swojego cyklu może pomóc w określeniu okna płodności. Pomocne mogą być:
+                      Regularne obserwowanie swojego cyklu może pomóc w określeniu okna płodności.
+                      Pomocne mogą być:
                     </p>
                     <ul className="list-disc list-inside mt-2 space-y-1 text-muted-foreground">
                       <li>Kalendarz cyklu</li>
@@ -263,7 +294,10 @@ export const FertilityEducation = () => {
                 <CardContent className="space-y-2 text-sm text-muted-foreground">
                   <p>Warto skonsultować się ze specjalistą, jeśli:</p>
                   <ul className="list-disc list-inside space-y-1">
-                    <li>Masz poniżej 35 lat i nie udaje się zajść w ciążę przez 12 miesięcy regularnych prób</li>
+                    <li>
+                      Masz poniżej 35 lat i nie udaje się zajść w ciążę przez 12 miesięcy
+                      regularnych prób
+                    </li>
                     <li>Masz powyżej 35 lat i nie udaje się zajść w ciążę przez 6 miesięcy</li>
                     <li>Masz nieregularny cykl lub jego brak</li>
                     <li>Podejrzewasz niepłodność partnera</li>

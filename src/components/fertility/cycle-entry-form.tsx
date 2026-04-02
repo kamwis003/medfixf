@@ -42,14 +42,15 @@ export const CycleEntryForm = ({ onSubmit, initialData }: CycleEntryFormProps) =
   const [startDate, setStartDate] = React.useState<Date | undefined>(initialData?.startDate)
   const [endDate, setEndDate] = React.useState<Date | undefined>(initialData?.endDate)
   const [selectedSymptoms, setSelectedSymptoms] = React.useState<Set<SymptomType>>(
-    new Set(initialData?.symptoms?.map((s) => s.type) ?? []),
+    new Set(initialData?.symptoms?.map(s => s.type) ?? [])
   )
   const [symptomIntensities, setSymptomIntensities] = React.useState<
     Record<SymptomType, 1 | 2 | 3 | 4 | 5>
   >(
-    Object.fromEntries(
-      initialData?.symptoms?.map((s) => [s.type, s.intensity]) ?? [],
-    ) as Record<SymptomType, 1 | 2 | 3 | 4 | 5>,
+    Object.fromEntries(initialData?.symptoms?.map(s => [s.type, s.intensity]) ?? []) as Record<
+      SymptomType,
+      1 | 2 | 3 | 4 | 5
+    >
   )
   const [notes, setNotes] = React.useState(initialData?.notes || '')
 
@@ -69,13 +70,13 @@ export const CycleEntryForm = ({ onSubmit, initialData }: CycleEntryFormProps) =
   const handleIntensityChange = (symptomType: SymptomType, intensity: string) => {
     setSymptomIntensities({
       ...symptomIntensities,
-      [symptomType]: parseInt(intensity) as 1 | 2 | 3 | 4 | 5
+      [symptomType]: parseInt(intensity) as 1 | 2 | 3 | 4 | 5,
     })
   }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     if (!startDate) {
       alert('Proszę wybrać datę rozpoczęcia cyklu')
       return
@@ -89,14 +90,14 @@ export const CycleEntryForm = ({ onSubmit, initialData }: CycleEntryFormProps) =
     const symptoms = Array.from(selectedSymptoms).map(type => ({
       type,
       intensity: symptomIntensities[type] || 3,
-      description: type === 'other' ? notes : undefined
+      description: type === 'other' ? notes : undefined,
     }))
 
     onSubmit({
       startDate,
       endDate,
       symptoms,
-      notes
+      notes,
     })
   }
 
@@ -123,12 +124,7 @@ export const CycleEntryForm = ({ onSubmit, initialData }: CycleEntryFormProps) =
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-auto p-0">
-                <Calendar
-                  mode="single"
-                  selected={startDate}
-                  onSelect={setStartDate}
-                  initialFocus
-                />
+                <Calendar mode="single" selected={startDate} onSelect={setStartDate} initialFocus />
               </PopoverContent>
             </Popover>
           </div>
@@ -153,7 +149,7 @@ export const CycleEntryForm = ({ onSubmit, initialData }: CycleEntryFormProps) =
                   mode="single"
                   selected={endDate}
                   onSelect={setEndDate}
-                  disabled={(date) => startDate ? date < startDate : false}
+                  disabled={date => (startDate ? date < startDate : false)}
                   initialFocus
                 />
               </PopoverContent>
@@ -167,28 +163,28 @@ export const CycleEntryForm = ({ onSubmit, initialData }: CycleEntryFormProps) =
           <CardTitle>Objawy okołocyklowe</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          {symptomTypes.map((symptom) => (
+          {symptomTypes.map(symptom => (
             <div key={symptom.type} className="space-y-2">
               <div className="flex items-center space-x-2">
                 <Checkbox
                   id={symptom.type}
                   checked={selectedSymptoms.has(symptom.type)}
-                  onCheckedChange={(checked) => handleSymptomToggle(symptom.type, checked as boolean)}
+                  onCheckedChange={checked => handleSymptomToggle(symptom.type, checked as boolean)}
                 />
                 <Label htmlFor={symptom.type} className="font-normal">
                   {symptom.label}
                 </Label>
               </div>
-              
+
               {selectedSymptoms.has(symptom.type) && (
                 <div className="ml-6 space-y-2">
                   <Label className="text-sm text-muted-foreground">Intensywność:</Label>
                   <RadioGroup
                     value={symptomIntensities[symptom.type]?.toString() || '3'}
-                    onValueChange={(value) => handleIntensityChange(symptom.type, value)}
+                    onValueChange={value => handleIntensityChange(symptom.type, value)}
                     className="flex gap-4"
                   >
-                    {[1, 2, 3, 4, 5].map((level) => (
+                    {[1, 2, 3, 4, 5].map(level => (
                       <div key={level} className="flex items-center space-x-1">
                         <RadioGroupItem value={level.toString()} id={`${symptom.type}-${level}`} />
                         <Label htmlFor={`${symptom.type}-${level}`} className="font-normal text-sm">
@@ -197,9 +193,7 @@ export const CycleEntryForm = ({ onSubmit, initialData }: CycleEntryFormProps) =
                       </div>
                     ))}
                   </RadioGroup>
-                  <p className="text-xs text-muted-foreground">
-                    1 = niska, 5 = bardzo wysoka
-                  </p>
+                  <p className="text-xs text-muted-foreground">1 = niska, 5 = bardzo wysoka</p>
                 </div>
               )}
             </div>
@@ -214,7 +208,7 @@ export const CycleEntryForm = ({ onSubmit, initialData }: CycleEntryFormProps) =
         <CardContent>
           <Textarea
             value={notes}
-            onChange={(e) => setNotes(e.target.value)}
+            onChange={e => setNotes(e.target.value)}
             placeholder="Opcjonalne dodatkowe informacje..."
             rows={4}
           />

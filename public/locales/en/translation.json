@@ -325,8 +325,8 @@
       "errorPatient": "Failed to load patient data.",
       "errorEntries": "Failed to load diary entries.",
       "filter": {
-      "dateRange": "Data range",
-      "clear": "Show all"
+        "dateRange": "Data range",
+        "clear": "Show all"
       },
       "tabs": {
         "visualization": "Visualization",
@@ -584,6 +584,52 @@
     },
     "cancelled": {
       "title": "Payment Cancelled"
+    }
+  },
+  "consultationRequest": {
+    "submit": "Submit consultation request",
+    "submitting": "Submitting...",
+    "success": {
+      "title": "Request submitted",
+      "description": "Your request has been forwarded to the clinic. We will contact you soon."
+    },
+    "errors": {
+      "consentRequired": "Consent required",
+      "consentRequiredDescription": "You must consent to the processing of your medical data.",
+      "submitFailed": "Failed to submit request"
+    },
+    "specialists": {
+      "gynecologist": "Gynecologist",
+      "fertilitySpecialist": "Fertility specialist",
+      "endocrinologist": "Endocrinologist"
+    },
+    "status": {
+      "pending": "Pending",
+      "accepted": "Accepted",
+      "rejected": "Rejected"
+    },
+    "myRequests": {
+      "navTitle": "My requests",
+      "title": "My requests",
+      "description": "List of your requests to the clinic.",
+      "empty": "You have no requests yet.",
+      "sentAt": "Sent at",
+      "rejectedReason": "Rejection reason"
+    },
+    "clinic": {
+      "navTitle": "Patient requests",
+      "title": "Patient requests",
+      "description": "List of requests from patients. You can accept or reject them.",
+      "empty": "No requests found.",
+      "specialist": "Specialist",
+      "sentAt": "Submitted at",
+      "accept": "Accept",
+      "reject": "Reject",
+      "confirmReject": "Confirm rejection",
+      "cancelReject": "Cancel",
+      "rejectReason": "Rejection reason (optional)",
+      "rejectReasonPlaceholder": "Enter rejection reason...",
+      "rejectedReason": "Rejection reason"
     }
   }
 }

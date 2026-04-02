@@ -451,8 +451,8 @@
       "errorPatient": "Не вдалося завантажити дані пацієнта.",
       "errorEntries": "Не вдалося завантажити записи щоденника.",
       "filter": {
-      "dateRange": "Діапазон даних",
-      "clear": "Показати всі"
+        "dateRange": "Діапазон даних",
+        "clear": "Показати всі"
       },
       "tabs": {
         "visualization": "Візуалізація",
@@ -476,6 +476,52 @@
         "totalEntries": "Усього записів",
         "medicalFactors": "Медичні фактори"
       }
+    }
+  },
+  "consultationRequest": {
+    "submit": "Надіслати запит на консультацію",
+    "submitting": "Надсилання...",
+    "success": {
+      "title": "Запит надіслано",
+      "description": "Ваш запит передано до клініки. Ми зв'яжемося з вами найближчим часом."
+    },
+    "errors": {
+      "consentRequired": "Необхідна згода",
+      "consentRequiredDescription": "Ви повинні дати згоду на обробку ваших медичних даних.",
+      "submitFailed": "Помилка надсилання запиту"
+    },
+    "specialists": {
+      "gynecologist": "Гінеколог",
+      "fertilitySpecialist": "Спеціаліст з фертильності",
+      "endocrinologist": "Ендокринолог"
+    },
+    "status": {
+      "pending": "Очікує",
+      "accepted": "Прийнято",
+      "rejected": "Відхилено"
+    },
+    "myRequests": {
+      "navTitle": "Мої запити",
+      "title": "Мої запити",
+      "description": "Список ваших запитів до клініки.",
+      "empty": "У вас ще немає запитів.",
+      "sentAt": "Надіслано",
+      "rejectedReason": "Причина відхилення"
+    },
+    "clinic": {
+      "navTitle": "Запити пацієнтів",
+      "title": "Запити пацієнтів",
+      "description": "Список запитів від пацієнтів. Ви можете прийняти або відхилити їх.",
+      "empty": "Запитів немає.",
+      "specialist": "Спеціаліст",
+      "sentAt": "Дата запиту",
+      "accept": "Прийняти",
+      "reject": "Відхилити",
+      "confirmReject": "Підтвердити відхилення",
+      "cancelReject": "Скасувати",
+      "rejectReason": "Причина відхилення (необов'язково)",
+      "rejectReasonPlaceholder": "Вкажіть причину відхилення...",
+      "rejectedReason": "Причина відхилення"
     }
   }
 }

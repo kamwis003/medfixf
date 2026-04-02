@@ -30,6 +30,8 @@ import { FertilityEducation } from '@/pages/modules/fertility/education'
 import { ConsultationRequest } from '@/pages/modules/consultation-request'
 import { PatientsPage } from '@/pages/modules/patients'
 import { PatientDetailPage } from '@/pages/modules/patient-detail'
+import { MyRequestsPage } from '@/pages/modules/my-requests'
+import { ClinicRequestsPage } from '@/pages/modules/clinic-requests'
 
 export const router = createBrowserRouter([
   {
@@ -167,6 +169,14 @@ export const router = createBrowserRouter([
                       { index: true, element: <PatientsPage /> },
                       { path: ':id', element: <PatientDetailPage /> },
                     ],
+                  },
+                  {
+                    path: 'my-requests',
+                    element: <MyRequestsPage />,
+                  },
+                  {
+                    path: 'clinic-requests',
+                    element: <ClinicRequestsPage />,
                   },
                 ],
               },

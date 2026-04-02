@@ -69,9 +69,7 @@ export const EndometriosisAdvice = () => {
     <div className="flex flex-1 flex-col gap-6 p-4 md:p-6">
       <div className="flex flex-col gap-2">
         <h1 className="text-3xl font-bold">{t('endometriosis.advice.title')}</h1>
-        <p className="text-muted-foreground">
-          {t('endometriosis.advice.subtitle')}
-        </p>
+        <p className="text-muted-foreground">{t('endometriosis.advice.subtitle')}</p>
       </div>
 
       <Tabs defaultValue="about" className="w-full">
@@ -96,18 +94,16 @@ export const EndometriosisAdvice = () => {
               <Card>
                 <CardHeader>
                   <CardTitle>{t('endometriosis.advice.c1s1title')}</CardTitle>
-                  <CardDescription>
-                    {t('endometriosis.advice.c1s1subtitle')}
-                  </CardDescription>
+                  <CardDescription>{t('endometriosis.advice.c1s1subtitle')}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4 text-sm">
                   {(
-                t('endometriosis.advice.c1s1content', {
-                  returnObjects: true,
-                }) as string[]
-              ).map((item, index) => (
-                <p key={index}>{item}</p>
-              ))}
+                    t('endometriosis.advice.c1s1content', {
+                      returnObjects: true,
+                    }) as string[]
+                  ).map((item, index) => (
+                    <p key={index}>{item}</p>
+                  ))}
                 </CardContent>
               </Card>
 
@@ -118,12 +114,12 @@ export const EndometriosisAdvice = () => {
                 <CardContent className="space-y-3 text-sm">
                   <ul className="list-disc list-inside space-y-1 text-muted-foreground">
                     {(
-                t('endometriosis.advice.c1s2content', {
-                  returnObjects: true,
-                }) as string[]
-              ).map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
+                      t('endometriosis.advice.c1s2content', {
+                        returnObjects: true,
+                      }) as string[]
+                    ).map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
@@ -141,22 +137,18 @@ export const EndometriosisAdvice = () => {
               <Card>
                 <CardHeader>
                   <CardTitle>{t('endometriosis.advice.c2s1title')}</CardTitle>
-                  <CardDescription>
-                    {t('endometriosis.advice.c2s1subtitle')}
-                  </CardDescription>
+                  <CardDescription>{t('endometriosis.advice.c2s1subtitle')}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4 text-sm">
-                  <p>
-                    {t('endometriosis.advice.c2s1content')}
-                  </p>
+                  <p>{t('endometriosis.advice.c2s1content')}</p>
                   <ul className="list-disc list-inside space-y-1 text-muted-foreground">
                     {(
-                t('endometriosis.advice.c2s1list', {
-                  returnObjects: true,
-                }) as string[]
-              ).map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
+                      t('endometriosis.advice.c2s1list', {
+                        returnObjects: true,
+                      }) as string[]
+                    ).map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
                 </CardContent>
               </Card>
@@ -173,19 +165,17 @@ export const EndometriosisAdvice = () => {
               <Card>
                 <CardHeader>
                   <CardTitle>{t('endometriosis.advice.c3s1title')}</CardTitle>
-                  <CardDescription>
-                    {t('endometriosis.advice.c3s1subtitle')}
-                  </CardDescription>
+                  <CardDescription>{t('endometriosis.advice.c3s1subtitle')}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4 text-sm">
                   <ul className="list-disc list-inside space-y-2 text-muted-foreground">
                     {(
-                t('endometriosis.advice.c3s1content', {
-                  returnObjects: true,
-                }) as string[]
-              ).map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
+                      t('endometriosis.advice.c3s1content', {
+                        returnObjects: true,
+                      }) as string[]
+                    ).map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
                 </CardContent>
               </Card>

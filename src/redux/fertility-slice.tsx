@@ -47,20 +47,17 @@ const fertilitySlice = createSlice({
       state.entries = sortByDate([...state.entries, action.payload])
     },
     updateEntry: (state, action: PayloadAction<ICycleEntryRedux>) => {
-      const index = state.entries.findIndex((e) => e.id === action.payload.id)
+      const index = state.entries.findIndex(e => e.id === action.payload.id)
       if (index !== -1) {
         state.entries[index] = action.payload
         state.entries = sortByDate(state.entries)
       }
     },
     deleteEntry: (state, action: PayloadAction<string>) => {
-      state.entries = state.entries.filter((e) => e.id !== action.payload)
+      state.entries = state.entries.filter(e => e.id !== action.payload)
     },
-    setOvulationDate: (
-      state,
-      action: PayloadAction<{ entryId: string; date?: string }>,
-    ) => {
-      const entry = state.entries.find((e) => e.id === action.payload.entryId)
+    setOvulationDate: (state, action: PayloadAction<{ entryId: string; date?: string }>) => {
+      const entry = state.entries.find(e => e.id === action.payload.entryId)
       if (entry) {
         entry.ovulationDate = action.payload.date
       }
@@ -68,11 +65,9 @@ const fertilitySlice = createSlice({
   },
 })
 
-export const { addEntry, updateEntry, deleteEntry, setOvulationDate } =
-  fertilitySlice.actions
+export const { addEntry, updateEntry, deleteEntry, setOvulationDate } = fertilitySlice.actions
 
-export const selectFertilityEntries = (state: {
-  fertility: IFertilityState
-}) => state.fertility.entries
+export const selectFertilityEntries = (state: { fertility: IFertilityState }) =>
+  state.fertility.entries
 
 export default fertilitySlice.reducer

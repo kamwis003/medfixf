@@ -9,7 +9,14 @@ export interface CycleEntry {
   updatedAt: Date
 }
 
-export type SymptomType = 'cramps' | 'headache' | 'mood_changes' | 'fatigue' | 'bloating' | 'breast_tenderness' | 'other'
+export type SymptomType =
+  | 'cramps'
+  | 'headache'
+  | 'mood_changes'
+  | 'fatigue'
+  | 'bloating'
+  | 'breast_tenderness'
+  | 'other'
 
 export interface Symptom {
   type: SymptomType

@@ -6,7 +6,7 @@ import { pl, enUS, uk } from 'date-fns/locale'
 import type { Locale } from 'date-fns'
 import { ChevronLeft, TrendingUp, TrendingDown, Minus } from 'lucide-react'
 import {
-  BarChart, 
+  BarChart,
   Bar,
   XAxis,
   YAxis,
@@ -42,7 +42,6 @@ const RISK_WEIGHTS = {
   noHormonePenalty: 10,
   noImagingPenalty: 5,
 } as const
-
 
 function computePrognosis(entries: IPatientDiaryEntry[]) {
   if (entries.length === 0) return null
@@ -91,14 +90,16 @@ export const PatientDetailPage: React.FC = () => {
   const [patientError, setPatientError] = React.useState<string | null>(null)
   const [entriesError, setEntriesError] = React.useState<string | null>(null)
 
-  const [minDate, setMinDate] = React.useState<string>("")
-  const [maxDate, setMaxDate] = React.useState<string>("")
-  const [filterStart, setFilterStart] = React.useState<string>("")
-  const [filterEnd, setFilterEnd] = React.useState<string>("")
+  const [minDate, setMinDate] = React.useState<string>('')
+  const [maxDate, setMaxDate] = React.useState<string>('')
+  const [filterStart, setFilterStart] = React.useState<string>('')
+  const [filterEnd, setFilterEnd] = React.useState<string>('')
   const { theme } = useTheme()
   const isDarkMode =
     theme === 'dark' ||
-    (theme === 'auto' && typeof window !== 'undefined' && document.documentElement.classList.contains('dark'))
+    (theme === 'auto' &&
+      typeof window !== 'undefined' &&
+      document.documentElement.classList.contains('dark'))
 
   React.useEffect(() => {
     if (!id) return
@@ -128,18 +129,16 @@ export const PatientDetailPage: React.FC = () => {
       setFilterStart(first)
       setFilterEnd(last)
     } else {
-      setMinDate("")
-      setMaxDate("")
-      setFilterStart("")
-      setFilterEnd("")
+      setMinDate('')
+      setMaxDate('')
+      setFilterStart('')
+      setFilterEnd('')
     }
   }, [entries])
 
   const filteredEntries = React.useMemo(() => {
     if (!filterStart || !filterEnd) return []
-    return entries.filter(
-      e => e.date >= filterStart && e.date <= filterEnd
-    )
+    return entries.filter(e => e.date >= filterStart && e.date <= filterEnd)
   }, [entries, filterStart, filterEnd])
 
   const chartData = React.useMemo(
@@ -273,56 +272,57 @@ export const PatientDetailPage: React.FC = () => {
             <div className="text-center text-muted-foreground py-10">{t('patients.loading')}</div>
           ) : (
             <>
-
-            <Card>
-              <CardHeader>
-                <CardTitle>{t('patients.detail.visualization.chartTitle')}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                {chartData.length === 0 ? (
-                <p className="text-muted-foreground text-sm">
-                  {t('patients.detail.visualization.noData')}
-                </p>
-              ) : (
-            <ResponsiveContainer width="100%" height={280}>
-              <BarChart
-                data={chartData}
-                margin={{ top: 5, right: 20, left: -10, bottom: 5 }}
-              >
-                <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
-                <XAxis
-                  dataKey="date"
-                  tick={{ fontSize: 12 }}
-                  className="text-muted-foreground"
-                />
-                <YAxis
-                  domain={[0, 10]}
-                  ticks={[0, 2, 4, 6, 8, 10]}
-                  tick={{ fontSize: 12 }}
-                />
-                <Tooltip
-                  labelFormatter={label =>
-                    `${t('patients.detail.visualization.date')}: ${label}`
-                  }
-                  formatter={(value: number | undefined) => [value ?? 0, t('endometriosis.diary.painlevel')]}
-                  
-                />
-                <ReferenceLine
-                  y={7}
-                  stroke="hsl(var(--destructive))"
-                  strokeDasharray="4 4"
-                />
-                <Bar
-                  dataKey="painLevel"
-                  fill={isDarkMode ? "#b2b2b2" : "hsl(var(--primary))"}
-                  radius={[4, 4, 0, 0]}
-                  maxBarSize={32}
-                />
-              </BarChart>
-            </ResponsiveContainer>
-          )}
-        </CardContent>
-      </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>{t('patients.detail.visualization.chartTitle')}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  {chartData.length === 0 ? (
+                    <p className="text-muted-foreground text-sm">
+                      {t('patients.detail.visualization.noData')}
+                    </p>
+                  ) : (
+                    <ResponsiveContainer width="100%" height={280}>
+                      <BarChart
+                        data={chartData}
+                        margin={{ top: 5, right: 20, left: -10, bottom: 5 }}
+                      >
+                        <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
+                        <XAxis
+                          dataKey="date"
+                          tick={{ fontSize: 12 }}
+                          className="text-muted-foreground"
+                        />
+                        <YAxis
+                          domain={[0, 10]}
+                          ticks={[0, 2, 4, 6, 8, 10]}
+                          tick={{ fontSize: 12 }}
+                        />
+                        <Tooltip
+                          labelFormatter={label =>
+                            `${t('patients.detail.visualization.date')}: ${label}`
+                          }
+                          formatter={(value: number | undefined) => [
+                            value ?? 0,
+                            t('endometriosis.diary.painlevel'),
+                          ]}
+                        />
+                        <ReferenceLine
+                          y={7}
+                          stroke="hsl(var(--destructive))"
+                          strokeDasharray="4 4"
+                        />
+                        <Bar
+                          dataKey="painLevel"
+                          fill={isDarkMode ? '#b2b2b2' : 'hsl(var(--primary))'}
+                          radius={[4, 4, 0, 0]}
+                          maxBarSize={32}
+                        />
+                      </BarChart>
+                    </ResponsiveContainer>
+                  )}
+                </CardContent>
+              </Card>
 
               <Card>
                 <CardHeader>

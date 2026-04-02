@@ -1,29 +1,29 @@
 export type DiaryEntry = {
-  id: string;
-  userId: string;
-  date: string;
-  painLevel: number;
-  painLocation: string;
-  symptoms: string;
-  hadSurgeryLast6Months: boolean;
-  surgeryDescription?: string;
-  hormonalTreatment: boolean;
-  recentImaging: boolean;
-  cycleDay?: number;
-  createdAt: string;
-};
+  id: string
+  userId: string
+  date: string
+  painLevel: number
+  painLocation: string
+  symptoms: string
+  hadSurgeryLast6Months: boolean
+  surgeryDescription?: string
+  hormonalTreatment: boolean
+  recentImaging: boolean
+  cycleDay?: number
+  createdAt: string
+}
 
 export type DiaryEntryForm = {
-  date: string;
-  painLevel: number;
-  painLocation: string;
-  symptoms: string;
-  hadSurgeryLast6Months: boolean;
-  surgeryDescription: string;
-  hormonalTreatment: boolean;
-  recentImaging: boolean;
-  cycleDay: number | "";
-};
+  date: string
+  painLevel: number
+  painLocation: string
+  symptoms: string
+  hadSurgeryLast6Months: boolean
+  surgeryDescription: string
+  hormonalTreatment: boolean
+  recentImaging: boolean
+  cycleDay: number | ''
+}
 
 export type DiaryEntryPoint = {
   date: string
@@ -31,14 +31,14 @@ export type DiaryEntryPoint = {
 }
 
 export type ListDiaryResponse = {
-  success: true;
-  data: DiaryEntry[];
-};
+  success: true
+  data: DiaryEntry[]
+}
 
 export type CreateDiaryResponse = {
-  success: true;
-  data: DiaryEntry;
-};
+  success: true
+  data: DiaryEntry
+}
 export type Article = {
   id: string
   userId: string
